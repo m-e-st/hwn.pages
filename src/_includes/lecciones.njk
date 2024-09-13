@@ -1,0 +1,25 @@
+
+<h1 class="w3-center w3-indigo">Lecciones de las semanas</h1>
+
+{% set lecciones = [ "09-09","16-09","23-09","30-09", "07-10","14-10", "04-11","11-11","18-11","25-11", "02-12","09-12","16-12" ] %}
+
+<article class="w3-section">
+	{% for leccion in lecciones %}
+	<button onclick="openPage('{{leccion}}')" class="w3-button w3-block w3-light-grey w3-center"><h4>{{ leccion }}-2024</h4></button>
+	
+	<div id="{{ leccion }}" class="w3-container w3-border w3-hide">
+		{% include "notas_"+leccion+"-2024.njk" %}
+	</div>
+{% endfor %}
+</article>
+
+<script>
+function openPage(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>

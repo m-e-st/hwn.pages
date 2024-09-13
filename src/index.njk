@@ -1,0 +1,57 @@
+---
+layout: base.njk
+description: "Startseite"
+---
+
+{% macro image (name, ext='svg') %}
+"{{site.imagedir}}/{{name}}.{{ext}}"
+{% endmacro %}
+
+<style>
+body {font-family:"Times New Roman", serif}
+h1,h2,h3,h4,h5,h6 {font-family:serif; letter-spacing:5px}
+</style>
+
+<!-- Navigation (Sits on top) -->
+<nav class="w3-top w3-bar w3-white w3-padding w3-card w3-wide">
+	<a href="#home" class="w3-bar-item w3-button">{{ site.title }}</a>
+	<!-- Right-sided navbar links. Hide them on small screens -->
+	<div class="w3-right w3-hide-small">
+	<a href="#sobre" class="w3-bar-item w3-button">Sobre</a>
+	<a href="#abecedario" class="w3-bar-item w3-button">Abecedario</a>
+	<a href="#lecciones" class="w3-bar-item w3-button">Lecciones</a>
+	</div>
+</nav>
+
+<!-- Start Content -->
+<div id="home" class="w3-content">
+
+<!-- Image in Display Container -->
+<section class="w3-padding-top-48">
+	<div class="w3-display-container">
+		<img src={{ image('spain-country-flag-icon') }} alt="A real big spanisch flag" style="width:100%" class="w3-margin-top">
+		<div class="w3-display-right w3-padding w3-opacity w3-hide-small">
+			<h1 class="w3-text-sand w3-margin-right">{{ site.title }}</h1>
+		</div>
+	</div>
+</section>
+
+<!-- Sobre -->
+<section id="sobre" class="w3-padding-top-64">
+	{% include "sobre.njk" %}
+</section>
+
+<!-- Abecedario -->
+<section id="abecedario" class="w3-padding-top-64">
+{% include "abecedario.njk" %}
+section>
+
+<!-- Focales -->
+<section id="lecciones" class="w3-container w3-padding-64">
+	{% include "lecciones.njk" %}
+
+
+<!-- End Content -->
+</div>
+
+

@@ -1,0 +1,23 @@
+{
+  "name": "espanol",
+  "version": "0.1.0",
+  "description": "Aprende español",
+  "main": ".eleventy.js",
+  "scripts": {
+    "clean": "del public",
+    "dev": "eleventy --serve --watch",
+    "build": "ELEVENTY_ENV=production eleventy",
+    "disabled-postbuild": "./deploy-site.sh",
+    "browse": "firefox -p \"localhost\" -new-tab localhost:8080"
+  },
+  "author": "John Doe",
+  "license": "ISC",
+  "homepage": "https://web.elektrolurch.net",
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@grimlink/eleventy-plugin-lucide-icons": "^2.0.0",
+    "del-cli": "^5.0.0",
+    "html-minifier-terser": "^7.2.0"
+  },
+  "keywords": []
+}
