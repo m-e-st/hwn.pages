@@ -1,25 +1,35 @@
 
-<h1 class="w3-center w3-indigo">Lecciones de las semanas</h1>
-
-{% set lecciones = [ "09-09","16-09","23-09","30-09", "07-10","14-10", "04-11","11-11","18-11","25-11", "02-12","09-12","16-12" ] %}
+<div>
+	<button onclick="closeDetails();" class="w3-btn w3-right" style="margin-top:8px" title="Todas las notas están cerradas">
+		{% lucide "minimize", { "stroke": "#FFF" }%}
+	</button>
+	<h1 class="w3-center w3-indigo">Lecciones de las semanas.</h1>
+</div>
 
 <article class="w3-section">
-	{% for leccion in lecciones %}
-	<button onclick="openPage('{{leccion}}')" class="w3-button w3-block w3-light-grey w3-center"><h4>{{ leccion }}-2024</h4></button>
-	
-	<div id="{{ leccion }}" class="w3-container w3-border w3-hide">
-		{% include "notas_"+leccion+"-2024.njk" %}
-	</div>
-{% endfor %}
+	{% for leccion in lecciones.notas %}
+	<details id="{{ leccion.date }}" >
+		<summary class="w3-padding-small w3-center w3-light-gray w3-hover-gray" style="list-style:none;margin-bottom:4px">
+			<a href="lecciones/notas_{{ leccion.date }}.html?title={{ leccion.caption }}" 
+			   class="w3-right w3-hover-shadow" 
+			   style="margin-top:12px"
+			   title="Pantalla completa.">
+				{% lucide "external-link" %}
+			</a>
+			<h4>{{ leccion.caption }}</h4>
+		</summary>
+		<iframe class="w3-block w3-border-0"
+				src = "lecciones/notas_{{ leccion.date }}.html"
+				sandbox="" scrolling="no"></iframe>
+	</details>
+	{% endfor %}
 </article>
 
 <script>
-function openPage(id) {
-  var x = document.getElementById(id);
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
+	function closeDetails() {
+		const domDetails = document.getElementsByTagName("details");
+		for (let i = 0; i < domDetails.length; i++) {
+			domDetails[i].removeAttribute("open");
+		}	
+	}
 </script>

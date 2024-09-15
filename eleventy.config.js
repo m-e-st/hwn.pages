@@ -8,6 +8,12 @@ module.exports = function (eleventyConfig) {
 		const string = value.toISOString();
 		return string.slice(8,10) +'.' + string.slice(5,7) + '.' + string.slice(0,4);
 	});
+  	eleventyConfig.addFilter("dateTitle", function(value) { 
+		const token = value.split('_')[1];
+		if (! token) return "ERROR 1";
+		const parts = token.split('-');
+		return parts[2] + '-' + parts[1] + '-' + parts[0];
+	});
 	
 	eleventyConfig.addTransform ('htmlMinifier', function(content,outputPath) {
 		if (	(process.env.ELEVENTY_ENV === 'production')
@@ -24,6 +30,7 @@ module.exports = function (eleventyConfig) {
 		}
 		return content;
 	});
+	
   	
 	// Folders to copy to build dir (See. 1.1)
 	eleventyConfig.addPassthroughCopy("src/static/**");
