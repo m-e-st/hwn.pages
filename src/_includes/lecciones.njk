@@ -1,33 +1,36 @@
 
-<div>
-	<button onclick="closeDetails();" class="w3-btn w3-right" style="margin-top:8px" title="Todas las notas están cerradas">
-		{% lucide "minimize", { "stroke": "#FFF" }%}
-	</button>
-	<h1 class="w3-center w3-indigo">Lecciones de las semanas.</h1>
-</div>
 
-<article class="w3-section">
-	{% for leccion in lecciones.notas %}
-	<details id="{{ leccion.date }}" >
-		<summary class="w3-padding-small w3-center w3-light-gray w3-hover-gray" style="list-style:none;margin-bottom:4px">
-			<a href="lecciones/notas_{{ leccion.date }}.html?title={{ leccion.caption }}" 
-			   class="w3-right w3-hover-shadow" 
-			   style="margin-top:12px"
-			   title="Pantalla completa.">
-				{% lucide "external-link" %}
-			</a>
-			<h4>{{ leccion.caption }}</h4>
-		</summary>
-		<iframe class="w3-block w3-border-0"
-				src = "lecciones/notas_{{ leccion.date }}.html"
-				sandbox="" scrolling="auto"></iframe>
-	</details>
-	{% endfor %}
-</article>
+<details open>
+	<summary>
+		<button onclick="closeDetails();" class="w3-btn w3-right" style="margin-top:8px" title="Todas las notas están cerradas">
+			{% lucide "minimize", { "stroke": "#FFF" }%}
+		</button>
+		<h1 class="w3-center w3-indigo">Lecciones de las semanas.</h1>
+	</summary>
+
+	<article class="w3-section">
+		{% for leccion in lecciones.notas %}
+		<details id="{{ leccion.date }}" >
+			<summary class="w3-padding-small w3-center w3-light-gray w3-hover-gray">
+				<a href="lecciones/notas_{{ leccion.date }}.html?title={{ leccion.caption }}" 
+				   class="w3-right w3-hover-shadow" 
+				   style="margin-top:12px"
+				   title="Pantalla completa.">
+					{% lucide "external-link" %}
+				</a>
+				<h4>{{ leccion.caption }}</h4>
+			</summary>
+			<iframe class="w3-block w3-border-0"
+					src = "lecciones/notas_{{ leccion.date }}.html"
+					sandbox="" scrolling="auto"></iframe>
+		</details>
+		{% endfor %}
+	</article>
+</details>
 
 <script>
 	function closeDetails() {
-		const domDetails = document.getElementsByTagName("details");
+		const domDetails = document.querySelectorAll("article>details");
 		for (let i = 0; i < domDetails.length; i++) {
 			domDetails[i].removeAttribute("open");
 		}	

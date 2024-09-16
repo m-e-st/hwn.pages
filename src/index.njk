@@ -1,6 +1,11 @@
 ---
 layout: base.njk
 description: "Startseite"
+
+sections:
+  - "sobre"
+  - "alfabeto"
+  - "lecciones"
 ---
 
 {% macro image (name, ext='svg') %}
@@ -10,50 +15,47 @@ description: "Startseite"
 <style>
 body {font-family:"Times New Roman", serif}
 h1,h2,h3,h4,h5,h6 {font-family:serif; letter-spacing:5px}
+
+a.w3-bar-item { text-transform:capitalize; }
+
+summary { list-style:none;margin-bottom:4px }
+
 </style>
 
+<div class="w3-container">
+
 <!-- Navigation (Sits on top) -->
-<header>
 	<nav class="w3-top w3-bar w3-white w3-padding w3-card w3-wide">
 		<a href="#home" class="w3-bar-item w3-btn">{{ site.title }}</a>
 		<div class="w3-right w3-hide-small">
-			<a href="#sobre" class="w3-bar-item w3-btn">Sobre</a>
-			<a href="#abecedario" class="w3-bar-item w3-btn">Abecedario</a>
-			<a href="#lecciones" class="w3-bar-item w3-btn">Lecciones</a>
+			{% for section in sections %}
+			<a href="#{{ section }}" class="w3-bar-item w3-btn">{{ section }}</a>
+			{% endfor %}
 		</div>
 	</nav>
-</header>
 
 <!-- Start Content -->
-<main id="home" class="w3-content">
+	<main id="home" class="w3-white">
 
 <!-- Image in Display Container -->
-<section class="w3-padding-top-64">
-	<div class="w3-display-container">
-		<img src={{ image('spain-country-flag-icon') }} alt="A real big spanisch flag" style="width:100%;margin:2em 1.5em">
-		<div class="w3-display-right w3-padding w3-opacity w3-hide-small">
-			<h1 class="w3-text-sand">{{ site.title }}</h1>
-			<h6 class="w3-text-sand w3-right" style="margin-top:-0.8em">versión {{ pkg.version }}</h6>
-		</div>
-	</div>
-</section>
+		<section class="w3-padding-top-64 w3-display-container w3-auto" style="min-width:600px;max-width=992px">
+			<div class="w3-display-container">
+				<img src={{ image('spain-country-flag-icon') }} alt="A real big spanisch flag" style="width:100%;">
+				<div class="w3-display-right w3-padding w3-opacity w3-hide-small">
+					<h1 class="w3-text-sand">{{ site.title }}</h1>
+					<h6 class="w3-text-sand w3-right" style="margin-top:-0.8em">versión {{ pkg.version }}</h6>
+				</div>
+			</div>
+		</section>
 
-<!-- Sobre -->
-<section id="sobre" class="w3-padding-top-64">
-	{% include "sobre.njk" %}
-</section>
-
-<!-- Abecedario -->
-<section id="abecedario" class="w3-padding-top-64">
-{% include "abecedario.njk" %}
-section>
-
-<!-- Focales -->
-<section id="lecciones" class="w3-container w3-padding-64">
-	{% include "lecciones.njk" %}
+		{% for section in sections %}
+		<section id="{{ section }}" class="w3-padding-top-64">
+			{% include section + ".njk" %}
+		</section>
+		{% endfor %}
 
 
-<!-- End Content -->
-</main>
+	<!-- End Content -->
+	</main>
 
-
+</div>
