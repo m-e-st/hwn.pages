@@ -21,6 +21,10 @@ a.w3-bar-item { text-transform:capitalize; }
 
 summary { list-style:none;margin-bottom:4px }
 
+@media (min-width:993px)						{ main>section { padding-top:64px} }
+@media (max-width:992px) and (min-width:601px)	{ main>section { padding-top:32px} }
+@media (max-width:600px)						{ main>section { padding-top:16px} }
+
 </style>
 
 <div class="w3-container">
@@ -39,7 +43,7 @@ summary { list-style:none;margin-bottom:4px }
 	<main id="home" class="w3-white w3-content">
 
 <!-- Image in Display Container -->
-		<section class="w3-padding-top-64 w3-display-container w3-auto" style="min-width:600px;max-width=992px">
+		<section class="w3-display-container w3-auto" style="min-width:268px;max-width=992px">
 			<div class="w3-display-container">
 				<img src={{ image('spain-country-flag-icon') }} alt="A real big spanisch flag" style="width:100%;">
 				<div class="w3-display-right w3-padding w3-opacity w3-hide-small">
@@ -50,7 +54,7 @@ summary { list-style:none;margin-bottom:4px }
 		</section>
 
 		{% for section in sections %}
-		<section id="{{ section | Ascii }}" class="w3-padding-top-64">
+		<section id="{{ section | Ascii }}" class="w3-section">
 			{% set filename = section | Ascii %}
 			{% include filename + ".njk" %}
 		</section>
