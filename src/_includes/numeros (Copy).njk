@@ -1,0 +1,162 @@
+
+<!--	---------------------------------------------------------------- 
+  --	numeros.njk - Nunjucks include - Spanish numbers
+  --	---------------------------------------------------------------- 
+  -->
+  
+<style>
+ul { list-style:none;margin-bottom:4px }
+
+details>table {
+	width: 100%;
+	padding: 0;
+	border-spacing: 0;
+}
+details>table tr { 
+	padding: 0;
+	border: 1px solid;
+}
+details>table td { 
+	padding: 0;
+	margin: 0;
+	text-align: center;
+}
+
+details>ul>li>span {
+	padding: 0;
+	margin: 0;
+}
+</style>
+
+{% macro play(nummber} %}
+	<span onclick="number_{{number}].play(); false;">{% lucide "square-play", {size:16} %}</span>
+{% endmacro %}
+
+{% set classList = "w3-dark-gray w3-border-left w3-border-right w3-center w3-padding-small" %}
+
+<h1 class="w3-center w3-indigo">Las números español</h1>
+
+{% if site.env %}
+<br>
+<div class="w3-section w3-panel w3-pale-yellow w3-leftbar w3-rightbar w3-border-yellow">
+	<p class="w3-text-indigo w3-center w3-padding w3-wide" style="font-size:2em;font-weight:bolder">
+		Este contenido aún no está disponible
+	</p>
+</div>
+<br>
+{% else %}
+
+<div class="w3-row w3-wide">
+	<article class = "w3-col s6 m4 l3 ">
+		<details open>
+			<summary class="{{ classList }}">0 &hellip; 9</summary>
+			<ul>
+				<li>0 <span onclick="number_0.play(); false;">{% lucide "play", {size:12} %}</span> cero 	</li>
+<!--
+				<li>1 {{ play(1) uno</li>
+-->
+				<li>1 - uno 	<span onclick="number_1.play(); false;">{% lucide "square-play", {size:16} %}</span></li>
+				<li>2 - dos	 	<span onclick="number_2.play(); false;">{% lucide "square-play", {size:16} %}</span></li>
+				<li>3 - tres	<span onclick="number_3.play(); false;">{% lucide "square-play", {size:16} %}</span></li>
+				<li>4 - cuatro	<span onclick="number_4.play(); false;">{% lucide "square-play", {size:16} %}</span></li>
+				<li>5 - cinco	<span onclick="number_5.play(); false;">{% lucide "square-play", {size:16} %}</span></li>
+				<li>6 - seis	<span onclick="number_6.play(); false;">{% lucide "square-play", {size:16} %}</span></li>
+				<li>7 - siete	<span onclick="number_7.play(); false;">{% lucide "square-play", {size:16} %}</span></li>
+				<li>8 - ocho	<span onclick="number_8.play(); false;">{% lucide "square-play", {size:16} %}</span></li>
+				<li>9 - nueve	<span onclick="number_9.play(); false;">{% lucide "square-play", {size:16} %}</span></li>
+			</ul>
+			{#
+			<table class="w3-table">
+				{% for item in numeros.list %}
+				<tr>
+					<td>{{ item.number }}</td>
+					<td>{{ item.text }}</td>
+					<td><b id="play-{{ item.number }}"
+							onclick="console.log('number_{{ item.number }}.play()'); number_{{ item.number }}.play(); false;"
+					   >
+						{% lucide "square-play", {size:16} %}
+					   </b></td>
+				</li>
+				</tr>
+				{% endfor %}
+			</table>
+			#}
+		</details>
+	</article>
+	<article class = "w3-col s6 m4 l3">
+		<details open>
+			<summary class="{{ classList }}">10 &hellip; 19</summary>
+			<ul>
+				<li>10 - diez</li>			
+				<li>11 - once</li>
+				<li>12 - doce</li>
+				<li>13 - trece</li>
+				<li>14 - catorce</li>
+				<li>15 - quince</li>
+				<li>16 - dieciséis</li>
+				<li>17 - diecisiete</li>
+				<li>18 - dieciocho</li>
+				<li>19 - diecinueve</li>
+			</ul>
+		</details>
+	</article>
+	<article class = "w3-col s6 m4 l3">
+		<details open>
+			<summary class="{{ classList }}">20 &hellip; 29</summary>
+			<ul>
+				<li>20 - veinte
+				<li>21 - veintiuno</li>
+				<li>22 - veintidós</li>
+				<li>23 - veintitrés</li>
+				<li>24 - veinticuatro</li>
+				<li>25 - veinticinco</li>
+				<li>26 - veintiséis</li>
+				<li>27 - veintisiete</li>
+				<li>28 - veintiocho</li>
+				<li>29 - veintinueve</li>
+			</ul>
+		</details>
+	</article>
+	<article class = "w3-col s6 m4 l3">
+		<details open>
+			<summary class="{{ classList }}">Incrementos de diez</summary>
+			<ul>
+				<li>10 - diez</li>			
+				<li>20 - veinte
+				<li>30 - treinta</li>
+				<li>40 - cuarenta</li>
+				<li>50 - cincuenta</li>
+				<li>60 - sesenta</li>
+				<li>70 - setenta</li>
+				<li>80 - ochenta</li>
+				<li>90 - noventa</li>
+				<li>100 - cien</li>
+			</ul>
+		</details>
+	</article>	
+	<article class = "w3-col s6 m4 l3">
+		<details open>
+			<summary class="{{ classList }}">Otros ejemplos</summary>
+			<ul>
+				<li>30 - treinta</li>
+				<li>31 - treinta y uno</li>
+				<li>32 - treinta y dos</li>
+				<li>33 - treinta y tres</li>
+				<li>34 - treinta y cuatro</li>
+				<li>40 - cuarenta</li>
+				<li>41 - cuarenta y uno</li>
+				<li>42 - cuarenta y dos</li>
+				<li>80 - ochenta</li>
+				<li>89 - noventa y nueve</li>
+			</ul>
+		</details>
+	</article>	
+</div>
+
+{% endif %}
+
+<div>
+	{% for id, item in numeros.list %}
+	<audio id="number_{{ item.number }}"><source type="audio/mpeg" src="{{ numeros.prefix }}{{ item.number }}{{ numeros.suffix }}">no audio</audio>
+	{% endfor %}
+</div>

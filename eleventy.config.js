@@ -14,6 +14,14 @@ module.exports = function (eleventyConfig) {
 		const parts = token.split('-');
 		return parts[2] + '-' + parts[1] + '-' + parts[0];
 	});
+  	eleventyConfig.addFilter("Ascii", function(value) { 
+		const originalChars = "Ññáéíóú";
+		const replacementChars = "Nnaeiou";
+		let result = value;
+		for (let i = 0; i < originalChars.length;i++)
+			result = result.replaceAll(originalChars[i], replacementChars[i]);
+		return result;
+	});
 	
 	eleventyConfig.addTransform ('htmlMinifier', function(content,outputPath) {
 		if (	(process.env.ELEVENTY_ENV === 'production')

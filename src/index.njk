@@ -5,6 +5,7 @@ description: "Startseite"
 sections:
   - "sobre"
   - "alfabeto"
+  - "números"
   - "lecciones"
 ---
 
@@ -25,17 +26,17 @@ summary { list-style:none;margin-bottom:4px }
 <div class="w3-container">
 
 <!-- Navigation (Sits on top) -->
-	<nav class="w3-top w3-bar w3-white w3-padding w3-card w3-wide">
+	<nav class="w3-top w3-bar  {{ 'w3-white' if site.env else 'w3-sand'}} w3-padding w3-card w3-wide" style="margin-left:-16px;">
 		<a href="#home" class="w3-bar-item w3-btn">{{ site.title }}</a>
 		<div class="w3-right w3-hide-small">
 			{% for section in sections %}
-			<a href="#{{ section }}" class="w3-bar-item w3-btn">{{ section }}</a>
+			<a href="#{{ section | Ascii }}" class="w3-bar-item w3-btn">{{ section }}</a>
 			{% endfor %}
 		</div>
 	</nav>
 
 <!-- Start Content -->
-	<main id="home" class="w3-white">
+	<main id="home" class="w3-white w3-content">
 
 <!-- Image in Display Container -->
 		<section class="w3-padding-top-64 w3-display-container w3-auto" style="min-width:600px;max-width=992px">
@@ -49,8 +50,9 @@ summary { list-style:none;margin-bottom:4px }
 		</section>
 
 		{% for section in sections %}
-		<section id="{{ section }}" class="w3-padding-top-64">
-			{% include section + ".njk" %}
+		<section id="{{ section | Ascii }}" class="w3-padding-top-64">
+			{% set filename = section | Ascii %}
+			{% include filename + ".njk" %}
 		</section>
 		{% endfor %}
 

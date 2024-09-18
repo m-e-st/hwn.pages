@@ -1,4 +1,9 @@
 
+<!--	---------------------------------------------------------------- 
+  --	alfabeto.njk - Nunjucks include - Spanisch alfabet
+  --	---------------------------------------------------------------- 
+  -->
+  
 <style>
 article>button,article>span>button {
 	display:inline-block;
@@ -13,11 +18,9 @@ article>button:hover {
 	box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)
 }
 
-.w3-text { display:none!important;}
-
 </style>
 
-<h1 class="w3-center w3-indigo">El Abecedario Español</h1>
+<h1 class="w3-center w3-indigo">El abecedario español</h1>
 <div class="w3-row">
 	<div class="w3-col l6 m6 w3-padding-largex">
 		<article class="w3-section">
@@ -30,33 +33,33 @@ article>button:hover {
 
 		<article class="w3-section w3-margin-top">
 			<h4>Letras individuales</h4>
-			<button class="w3-tooltip" id='play-A'>A<span class="w3-text">a</span></button>
-			<button class="w3-tooltip" id='play-B'>B<span class="w3-text">be</span></button>
-			<button class="w3-tooltip" id='play-C'>C<span class="w3-text">ce</span></button>
-			<button class="w3-tooltip" id='play-D'>D<span class="w3-text">de</span></button>
-			<button class="w3-tooltip" id='play-E'>E<span class="w3-text">e</span></button>
-			<button class="w3-tooltip" id='play-F'>F<span class="w3-text">efe</span></button>
-			<button class="w3-tooltip" id='play-G'>G<span class="w3-text">ge</span></button>
-			<button class="w3-tooltip" id='play-H'>H<span class="w3-text">hache</span></button>
-			<button class="w3-tooltip" id='play-I'>I<span class="w3-text">i</span></button>
-			<button class="w3-tooltip" id='play-J'>J<span class="w3-text">jota</span></button>
-			<button class="w3-tooltip" id='play-K'>K<span class="w3-text">ka</span></button>
-			<button class="w3-tooltip" id='play-L'>L<span class="w3-text">ele</span></button>
-			<button class="w3-tooltip" id='play-M'>M<span class="w3-text">eme</span></button>
-			<button class="w3-tooltip" id='play-N'>N<span class="w3-text">ene</span></button>
-			<button class="w3-tooltip" id='play-NN'>Ñ<span class="w3-text">eñe</span></button>
-			<button class="w3-tooltip" id='play-O'>O<span class="w3-text">o</span></button>
-			<button class="w3-tooltip" id='play-P'>P<span class="w3-text">pe</span></button>
-			<button class="w3-tooltip" id='play-Q'>Q<span class="w3-text">cu</span></button>
-			<button class="w3-tooltip" id='play-R'>R<span class="w3-text">erre</span></button>
-			<button class="w3-tooltip" id='play-S'>S<span class="w3-text">ese</span></button>
-			<button class="w3-tooltip" id='play-T'>T<span class="w3-text">te</span></button>
-			<button class="w3-tooltip" id='play-U'>U<span class="w3-text">u</span></button>
-			<button class="w3-tooltip" id='play-V'>V<span class="w3-text">uve</span></button>
-			<button class="w3-tooltip" id='play-W'>W<span class="w3-text">uve doble</span></button>
-			<button class="w3-tooltip" id='play-X'>X<span class="w3-text">equis</span></button>
-			<button class="w3-tooltip" id='play-Y'>Y<span class="w3-text">i griega</span></button>
-			<button class="w3-tooltip" id='play-Z'>Z<span class="w3-text">zeta</span></button>
+			<button class="w3-tooltip" id='play-A'>A<span class="w3-hide">a</span></button>
+			<button class="w3-tooltip" id='play-B'>B<span class="w3-hide">be</span></button>
+			<button class="w3-tooltip" id='play-C'>C<span class="w3-hide">ce</span></button>
+			<button class="w3-tooltip" id='play-D'>D<span class="w3-hide">de</span></button>
+			<button class="w3-tooltip" id='play-E'>E<span class="w3-hide">e</span></button>
+			<button class="w3-tooltip" id='play-F'>F<span class="w3-hide">efe</span></button>
+			<button class="w3-tooltip" id='play-G'>G<span class="w3-hide">ge</span></button>
+			<button class="w3-tooltip" id='play-H'>H<span class="w3-hide">hache</span></button>
+			<button class="w3-tooltip" id='play-I'>I<span class="w3-hide">i</span></button>
+			<button class="w3-tooltip" id='play-J'>J<span class="w3-hide">jota</span></button>
+			<button class="w3-tooltip" id='play-K'>K<span class="w3-hide">ka</span></button>
+			<button class="w3-tooltip" id='play-L'>L<span class="w3-hide">ele</span></button>
+			<button class="w3-tooltip" id='play-M'>M<span class="w3-hide">eme</span></button>
+			<button class="w3-tooltip" id='play-N'>N<span class="w3-hide">ene</span></button>
+			<button class="w3-tooltip" id='play-NN'>Ñ<span class="w3-hide">eñe</span></button>
+			<button class="w3-tooltip" id='play-O'>O<span class="w3-hide">o</span></button>
+			<button class="w3-tooltip" id='play-P'>P<span class="w3-hide">pe</span></button>
+			<button class="w3-tooltip" id='play-Q'>Q<span class="w3-hide">cu</span></button>
+			<button class="w3-tooltip" id='play-R'>R<span class="w3-hide">erre</span></button>
+			<button class="w3-tooltip" id='play-S'>S<span class="w3-hide">ese</span></button>
+			<button class="w3-tooltip" id='play-T'>T<span class="w3-hide">te</span></button>
+			<button class="w3-tooltip" id='play-U'>U<span class="w3-hide">u</span></button>
+			<button class="w3-tooltip" id='play-V'>V<span class="w3-hide">uve</span></button>
+			<button class="w3-tooltip" id='play-W'>W<span class="w3-hide">uve doble</span></button>
+			<button class="w3-tooltip" id='play-X'>X<span class="w3-hide">equis</span></button>
+			<button class="w3-tooltip" id='play-Y'>Y<span class="w3-hide">i griega</span></button>
+			<button class="w3-tooltip" id='play-Z'>Z<span class="w3-hide">zeta</span></button>
 			<p class="w3-text-grey">Pulse el botón para escuchar la pronunciación de una sola letra.</p>
 		</article>
 	</div>
@@ -68,39 +71,39 @@ article>button:hover {
 </div>
 <div class="w3-padding-64">
 </div>
-<div class="w3-padding-64">
+<div class="w3-padding-64 w3-hide-small">
 </div>
 
-<audio id="letterA"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-1.mp3">no audio</audio>
-<audio id="letterB"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-2.mp3">no audio</audio>
-<audio id="letterC"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-3.mp3">no audio</audio>
-<audio id="letterD"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-4.mp3">no audio</audio>
-<audio id="letterE"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-5.mp3">no audio</audio>
-<audio id="letterF"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-6.mp3">no audio</audio>
-<audio id="letterG"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-7.mp3">no audio</audio>
-<audio id="letterH"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-8.mp3">no audio</audio>
-<audio id="letterI"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-9.mp3">no audio</audio>
-<audio id="letterJ"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-10.mp3">no audio</audio>
-<audio id="letterK"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-11.mp3">no audio</audio>
-<audio id="letterL"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-12.mp3">no audio</audio>
-<audio id="letterM"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-13.mp3">no audio</audio>
-<audio id="letterN"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-14.mp3">no audio</audio>
-<audio id="letterNN"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-15.mp3">no audio</audio>
-<audio id="letterO"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-16.mp3">no audio</audio>
-<audio id="letterP"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-17.mp3">no audio</audio>
-<audio id="letterQ"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-18.mp3">no audio</audio>
-<audio id="letterR"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-19.mp3">no audio</audio>
-<audio id="letterS"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-20.mp3">no audio</audio>
-<audio id="letterT"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-21.mp3">no audio</audio>
-<audio id="letterU"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-22.mp3">no audio</audio>
-<audio id="letterV"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-23.mp3">no audio</audio>
-<audio id="letterW"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-24.mp3">no audio</audio>
-<audio id="letterX"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-25.mp3">no audio</audio>
-<audio id="letterY"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-26.mp3">no audio</audio>
-<audio id="letterZ"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-27.mp3">no audio</audio>
-
-
 <div>
+	<audio id="letterA"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-1.mp3">no audio</audio>
+	<audio id="letterB"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-2.mp3">no audio</audio>
+	<audio id="letterC"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-3.mp3">no audio</audio>
+	<audio id="letterD"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-4.mp3">no audio</audio>
+	<audio id="letterE"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-5.mp3">no audio</audio>
+	<audio id="letterF"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-6.mp3">no audio</audio>
+	<audio id="letterG"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-7.mp3">no audio</audio>
+	<audio id="letterH"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-8.mp3">no audio</audio>
+	<audio id="letterI"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-9.mp3">no audio</audio>
+	<audio id="letterJ"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-10.mp3">no audio</audio>
+	<audio id="letterK"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-11.mp3">no audio</audio>
+	<audio id="letterL"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-12.mp3">no audio</audio>
+	<audio id="letterM"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-13.mp3">no audio</audio>
+	<audio id="letterN"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-14.mp3">no audio</audio>
+	<audio id="letterNN"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-15.mp3">no audio</audio>
+	<audio id="letterO"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-16.mp3">no audio</audio>
+	<audio id="letterP"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-17.mp3">no audio</audio>
+	<audio id="letterQ"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-18.mp3">no audio</audio>
+	<audio id="letterR"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-19.mp3">no audio</audio>
+	<audio id="letterS"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-20.mp3">no audio</audio>
+	<audio id="letterT"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-21.mp3">no audio</audio>
+	<audio id="letterU"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-22.mp3">no audio</audio>
+	<audio id="letterV"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-23.mp3">no audio</audio>
+	<audio id="letterW"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-24.mp3">no audio</audio>
+	<audio id="letterX"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-25.mp3">no audio</audio>
+	<audio id="letterY"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-26.mp3">no audio</audio>
+	<audio id="letterZ"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/SPA-27.mp3">no audio</audio>
+</div>
+
 	
 <script>
   document.getElementById('play-A').addEventListener('click', function() { letterA.play(); }, false);
@@ -133,5 +136,13 @@ article>button:hover {
 </script>
 	
 
-</div
+<!-- The reference section is only shown in the development environment -->
+
+<div class="reference w3-panel w3-sand w3-sans-serif w3-text-indigo {{ 'w3.hide' if site.env }}">
+	<b class="w3-padding" style="vertical-align:middle;">References</b>
+	<a class="w3-btn" href="https://www.babbel.com/en/magazine/pronounce-spanish", target="babbel">Babbel article</a>
+	<audio id="babbelTest"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/Spanish-Alphabet-Fast.mp3">no audio</audio>
+	<button class="w3-btn" onclick="babbelTest.play();false;">Babbel audio</button>
+</div>
+
 
