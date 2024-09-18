@@ -1,12 +1,12 @@
 
-<!--	---------------------------------------------------------------- 
+<!--	----------------------------------------------------------------
   --	numeros.njk - Nunjucks include - Spanish numbers
-  --	---------------------------------------------------------------- 
+  --	----------------------------------------------------------------
   -->
-  
+
 {% macro item (number, text='', icon=true) %}
 <li>{{number}}
-	<span 
+	<span
 	{% if icon %}
 		style="cursor:pointer";
 		onclick="number_{{number}}.play(); false;">	{% lucide "play", {size:12} %}
@@ -19,7 +19,7 @@
 {% endmacro %}
 
 {% set classList = "w3-dark-gray w3-border-left w3-border-right w3-center w3-padding-small" %}
-  
+
 <style>
 details>ul { list-style:none;margin-bottom:24px }
 
@@ -54,7 +54,7 @@ details>ul>li>span {
 		<details>
 			<summary class="{{ classList }}">10 &hellip; 19</summary>
 			<ul>
-				{{ item(10, "diez") }}			
+				{{ item(10, "diez") }}
 				{{ item(11, "once") }}
 				{{ item(12, "doce") }}
 				{{ item(13, "trece") }}
@@ -90,7 +90,7 @@ details>ul>li>span {
 		<details>
 			<summary class="{{ classList }}">Incrementos de diez</summary>
 			<ul>
-				{{ item(10, "diez") }}			
+				{{ item(10, "diez") }}
 				{{ item(20, "veinte") }}
 				{{ item(30, "treinta") }}
 				{{ item(40, "cuarenta") }}
@@ -102,7 +102,7 @@ details>ul>li>span {
 				{{ item(100, "cien") }}
 			</ul>
 		</details>
-	</article>	
+	</article>
 	<article class = "w3-col m6 l4">
 		<details>
 			<summary class="{{ classList }}">Otros ejemplos</summary>
@@ -119,7 +119,7 @@ details>ul>li>span {
 				{{ item(89, "noventa y nueve") }}
 			</ul>
 		</details>
-	</article>	
+	</article>
 </div>
 
 <div>
