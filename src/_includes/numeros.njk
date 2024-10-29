@@ -31,9 +31,33 @@ details>ul>li>span {
 }
 </style>
 
-<h1 class="w3-center w3-teal">Los números español</h1>
+<script>
+let stateNumeroDisplay = false;
 
-<div class="w3-row w3-wide">
+function toggleArticles() {
+	const elemNumeros = document.getElementById("numberParent");
+	const listDetails = elemNumeros.getElementsByTagName("details");
+	toggle = ! toggle;
+	for (let i = 0; i < listDetails.length; i++) {
+		console.log(i, listDetails[i].open);
+		listDetails[i].open = toggle;
+		console.log(i, " ==>", listDetails[i].open);
+	}
+}
+</script>
+
+<div class="w3-display-container">
+	<button class="w3-display-left w3-btn" 
+			onclick="setDetailsDisplay(document.getElementById('numberParent'), stateNumeroDisplay = ! stateNumeroDisplay);"
+			title="alternar">
+			{% lucide "chevrons-up-down", { "stroke":"white"}  %}
+	</button>
+	<a class="w3-display-right w3-btn" href="#indice" title="Índice">{% lucide "table-of-contents", { "stroke":"white"}  %}</a>
+	<h1 class="w3-center w3-teal">Los números español</h1>
+</div>
+
+<div id="numberParent">
+  <div class="w3-row w3-wide">
 	<article class = "w3-col m6 l3 ">
 		<details open>
 			<summary class="{{ classList }}">0 &hellip; 9</summary>
@@ -102,8 +126,8 @@ details>ul>li>span {
 			</ul>
 		</details>
 	</article>
-</div>
-<div class="w3-row w3-wide">
+  </div>
+  <div class="w3-row w3-wide">
 	<article class = "w3-col m6 l4">
 		<details>
 			<summary class="{{ classList }}">Otros ejemplos</summary>
@@ -138,8 +162,8 @@ details>ul>li>span {
 			</ul>
 		</details>
 	</article>
+  </div>
 </div>
-
 <div>
 	{% for id, item in numeros.list %}
 	<audio id="number_{{ item.number }}"><source type="audio/mpeg" src="{{ numeros.prefix }}{{ item.number }}{{ numeros.suffix }}">no audio</audio>

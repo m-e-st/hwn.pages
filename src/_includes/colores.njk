@@ -38,12 +38,30 @@ details>ul>li>span {
 }
 </style>
 
+<script>
+function scrambleColors() {
+	const elemColores = document.getElementById("colorParent");
+	const listColores = elemColores.children;
+	let i, s, t;
+	for (i = 0; i < 100; i++) {
+		s = getRandomInt(0, listColores.length);
+		t = getRandomInt(0, listColores.length);
+		if (s != t) {
+			listColores[t].parentNode.insertBefore(listColores[t], listColores[s]);
+		}
+	}
+}
+</script>
 
-<h1 class="w3-center w3-deep-orange">Los colores</h1>
-
-<div class="w3-row-padding w3-stretch w3-wide">
+<div class="w3-display-container">
+	<button class="w3-display-left w3-btn" onclick="scrambleColors();">{% lucide "dices", { "stroke":"white"}  %}</button>
+	<a class="w3-display-right w3-btn" href="#indice" title="Índice">{% lucide "table-of-contents", { "stroke":"white"}  %}</a>
+	<h1 class="w3-center w3-deep-orange">Los colores</h1>
+</div>
+	
+<div id="colorParent" class="w3-row-padding w3-stretch w3-wide">
 	{% for item in colores.list %}
-	<article id="colorblock_{{ loop.index0}}" class = "w3-col s6 m4 l3">
+	<article id="color_{{ loop.index0}}" class = "w3-col s6 m4 l3">
 		<div class="w3-card-4 w3-{{ item.name | lower }} w3-display-container"
 			 style="margin:12px 8px;height:96px;cursor:pointer"
 			 onclick="color_{{item.name}}.play(); false;"
@@ -79,3 +97,4 @@ details>ul>li>span {
 	<button class="w3-btn" onclick="babbelTest-3.play();false;">Babbel audio</button>
 </div>
 {% endif %}
+

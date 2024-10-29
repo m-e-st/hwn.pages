@@ -4,25 +4,32 @@
   --	----------------------------------------------------------------
   -->
 
-{% if site.env %}
-	<h1 class="w3-center w3-blue-gray">Lecciones de las semanas</h1>
-	<br>
-	<div class="w3-section w3-panel w3-pale-yellow w3-leftbar w3-rightbar w3-border-yellow">
-		<p class="w3-text-indigo w3-center w3-padding w3-wide" style="font-size:2em;font-weight:bolder">
-			Este contenido aún no está disponible.
-		</p>
-	</div>
-	<br>
-{% else %}
-<details open>
-	<summary>
-		<button onclick="closeDetails();" class="w3-btn w3-right" style="margin-top:8px" title="Todas las notas están cerradas">
-			{% lucide "minimize", { "stroke": "#FFF" }%}
+<details id="leccionesTotal" {%- if site.env -%}{%- else -%}open{%- endif -%}>
+	<summary class="w3-display-container" >
+		{%- if site.env -%}{%- else -%}
+		<button class="w3-display-left w3-btn" 
+				onclick="setDetailsDisplay(document.getElementById('leccionesParent'), false);"
+				title="colapsar">
+				{% lucide "chevron-up", { "stroke":"white"}  %}
 		</button>
-		<h1 class="w3-center  w3-blue-gray">Lecciones de las semanas</h1>
+		{%- endif -%}
+		<a class="w3-display-right w3-btn" href="#indice" title="Índice">{% lucide "table-of-contents", { "stroke":"white"}  %}</a>
+		<h1 class="w3-center w3-blue-gray" 
+			onclick="document.getElementByID('leccionesTotal').open=! document.getElementByID('leccionesTotal').open">
+			Lecciones de las semanas
+		</h1>
 	</summary>
 
-	<article class="w3-section">
+	<article id="leccionesParent" class="w3-section">
+	{% if site.env %}
+		<div class="w3-section w3-panel w3-pale-yellow w3-leftbar w3-rightbar w3-border-yellow w3-display-container">
+			<div class="w3-display-left w3-margin-left">{% lucide "construction", {"size":"48","stroke":"#ffeb3b"}  %}</div>
+			<p class="w3-padding w3-panel w3-text-blue-gray w3-center w3-wide" style="font-size:24px;font-weight:bolder">
+				Este contenido aún no está disponible.
+			</p>
+			<div class="w3-display-right w3-margin-right">{% lucide "construction", {"size":"48","stroke":"#ffeb3b"}  %}</div>
+		</div>
+	{% else %}
 		{% for leccion in lecciones.notas %}
 		<details id="{{ leccion.date }}" >
 			<summary class="w3-padding-small w3-center w3-light-gray w3-hover-gray">
@@ -40,14 +47,8 @@
 		</details>
 		{% endfor %}
 	</article>
+	{% endif %}
+	
 </details>
 
-<script>
-	function closeDetails() {
-		const domDetails = document.querySelectorAll("article>details");
-		for (let i = 0; i < domDetails.length; i++) {
-			domDetails[i].removeAttribute("open");
-		}
-	}
-</script>
-{% endif %}
+
