@@ -8,7 +8,7 @@
 article>button,article>span>button {
 	display:inline-block;
 	padding:8px 16px;vertical-align:middle;overflow:hidden;text-decoration:none;
-	text-align:center;cursor:pointer;white-space:nowrap;
+	text-align:center;cursor:progress;white-space:nowrap;
 	background-color:#616161;color:#FFF;
 	width:3em;
 	font-weight: bold;
@@ -132,12 +132,15 @@ article>button:hover {
 	
 
 <!-- The reference section is only shown in the development environment -->
-
-<div class="reference w3-panel w3-sand w3-sans-serif w3-text-indigo {{ 'w3-hide' if site.env }}">
+{% if site.env %}
+<div class="w3-center w3-light-gray w3-opacity-max">
+	<i>La salida de voz procede del sitio web de Babbel</i>
+</div>
+{% else %}
+<div class="reference w3-panel w3-sand w3-sans-serif w3-text-indigo">
 	<b class="w3-padding" style="vertical-align:middle;">References</b>
 	<a class="w3-btn" href="https://www.babbel.com/en/magazine/pronounce-spanish", target="babbel">Babbel article</a>
-	<audio id="babbelTest"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/Spanish-Alphabet-Fast.mp3">no audio</audio>
-	<button class="w3-btn" onclick="babbelTest.play();false;">Babbel audio</button>
+	<audio id="babbelTest-1"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2020/10/Spanish-Alphabet-Fast.mp3">no audio</audio>
+	<button class="w3-btn" onclick="babbelTest-1.play();false;">Babbel audio</button>
 </div>
-
-
+{% endif %}

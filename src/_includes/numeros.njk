@@ -5,20 +5,22 @@
   -->
 
 {% macro item (number, text='', icon=true) %}
-<li>{{number}}
+<li><b>{{number}}</b>
 	<span
-	{% if icon %}
-		style="cursor:pointer";
-		onclick="number_{{number}}.play(); false;">	{% lucide "play", {size:12} %}
+	{%- if icon %}
+		onclick="number_{{number}}.play(); false;"
+		style="cursor:progress";
+		> {% lucide "play", {size:12} %}
 	{% else %}
+		style="cursor:none";
 		> {% lucide "minus", {size:12} %}
-	{% endif %}
+	{% endif -%}
 	</span>
 	{{text}}
 </li>
 {% endmacro %}
 
-{% set classList = "w3-dark-gray w3-border-left w3-border-right w3-center w3-padding-small" %}
+{% set classList = "w3-teal w3-border-left w3-border-right w3-center w3-padding-small" %}
 
 <style>
 details>ul { list-style:none;margin-bottom:24px }
@@ -29,8 +31,7 @@ details>ul>li>span {
 }
 </style>
 
-
-<h1 class="w3-center w3-indigo">Los números español</h1>
+<h1 class="w3-center w3-teal">Los números español</h1>
 
 <div class="w3-row w3-wide">
 	<article class = "w3-col m6 l3 ">
@@ -51,7 +52,7 @@ details>ul>li>span {
 		</details>
 	</article>
 	<article class = "w3-col m6 l3">
-		<details>
+		<details open>
 			<summary class="{{ classList }}">10 &hellip; 19</summary>
 			<ul>
 				{{ item(10, "diez") }}
@@ -84,25 +85,25 @@ details>ul>li>span {
 			</ul>
 		</details>
 	</article>
-</div>
-<div class="w3-row w3-wide">
-	<article class = "w3-col m6 l4">
+	<article class = "w3-col m6 l3">
 		<details>
-			<summary class="{{ classList }}">Incrementos de diez</summary>
+			<summary class="{{ classList }}">30 &hellip; 39</summary>
 			<ul>
-				{{ item(10, "diez") }}
-				{{ item(20, "veinte") }}
 				{{ item(30, "treinta") }}
-				{{ item(40, "cuarenta") }}
-				{{ item(50, "cincuenta") }}
-				{{ item(60, "sesenta") }}
-				{{ item(70, "setenta") }}
-				{{ item(80, "ochenta") }}
-				{{ item(90, "noventa") }}
-				{{ item(100, "cien") }}
+				{{ item(31, "treinta y uno", false) }}
+				{{ item(32, "treinta y dos", false) }}
+				{{ item(33, "treinta y tres", false) }}
+				{{ item(34, "treinta y cuatro") }}
+				{{ item(35, "treinta y cinco", false) }}
+				{{ item(36, "treinta y seis", false) }}
+				{{ item(37, "treinta y siete", false) }}
+				{{ item(38, "treinta y ocho", false) }}
+				{{ item(39, "treinta y nueve", false) }}
 			</ul>
 		</details>
 	</article>
+</div>
+<div class="w3-row w3-wide">
 	<article class = "w3-col m6 l4">
 		<details>
 			<summary class="{{ classList }}">Otros ejemplos</summary>
@@ -120,6 +121,23 @@ details>ul>li>span {
 			</ul>
 		</details>
 	</article>
+	<article class = "w3-col m6 l4">
+		<details>
+			<summary class="{{ classList }}">Incrementos de diez</summary>
+			<ul>
+				{{ item(10, "diez") }}
+				{{ item(20, "veinte") }}
+				{{ item(30, "treinta") }}
+				{{ item(40, "cuarenta") }}
+				{{ item(50, "cincuenta") }}
+				{{ item(60, "sesenta") }}
+				{{ item(70, "setenta") }}
+				{{ item(80, "ochenta") }}
+				{{ item(90, "noventa") }}
+				{{ item(100, "cien") }}
+			</ul>
+		</details>
+	</article>
 </div>
 
 <div>
@@ -129,10 +147,14 @@ details>ul>li>span {
 </div>
 
 <!-- The reference section is only shown in the development environment -->
-
-<div class="reference w3-panel w3-sand w3-sans-serif w3-text-indigo {{ 'w3-hide' if site.env }}">
+{% if site.env %}
+<div class="w3-center w3-light-gray w3-opacity-max">
+	<i>La salida de voz procede del sitio web de Babbel</i>
+</div>
+{% else %}
+<div class="reference w3-panel w3-sand w3-sans-serif w3-text-indigo">
 	<b class="w3-padding" style="vertical-align:middle;">References</b>
 	<a class="w3-btn" href="https://www.babbel.com/en/magazine/counting-in-spanish", target="babbel">Babbel article</a>
-	<audio id="babbelTest"><source type="audio/mpeg" src="https://cms.babbel.news/wp-content/uploads/2022/08/SpaNum-0.mp3">no audio</audio>
-	<button class="w3-btn" onclick="babbelTest.play();false;">Babbel audio</button>
+	<button class="w3-btn" onclick="number_89.play();false;">Babbel audio</button>
 </div>
+{% endif %}

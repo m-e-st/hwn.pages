@@ -1,0 +1,23 @@
+{
+	"suffix": ".mp3",
+	"prefix": "https://cms.babbel.news/wp-content/uploads/",
+	"list": [
+				{ "name": "Red",		"file": "2018/09/red",				"noun": "rojo", "feminine": "roja"  },
+				{ "name": "Orange",		"file": "2018/09/orange-1",			"noun": "naranja" },
+				{ "name": "Yellow",		"file": "2018/09/yellow",			"noun": "amarillo", "feminine": "amarilla" },
+				{ "name": "Green",		"file": "2018/09/green",			"noun": "verde" },
+				{ "name": "Blue",		"file": "2018/09/blue",				"noun": "azul" },
+				{ "name": "Cyan",		"file": "2024/04/spanish-cian",		"noun": "cian" },
+				{ "name": "Turquoise",	"file": "2024/04/spanish-turquesa",	"noun": "turquesa" },
+				{ "name": "Violet",		"file": "2024/04/spanish-violeta",	"noun": "violeta" },
+				{ "name": "Purple",		"file": "2018/09/purple",			"noun": "lila" },
+				{ "name": "Pink",		"file": "2018/09/pink",				"noun": "rosa" },
+				{ "name": "Brown",		"file": "2018/09/brown",			"noun": "marrón" },
+				{ "name": "Gray",		"file": "2024/04/spanish-gris",		"noun": "gris" },
+				{ "name": "White",		"file": "2018/09/white",			"noun": "blanco", "feminine": "blanca" },
+				{ "name": "Silver",		"file": "2024/04/spanish-plateado",	"noun": "plateado", "feminine": "plateada" },
+				{ "name": "Gold",		"file": "2024/04/spanish-dorado",	"noun": "dorado", "feminine": "dorada" },
+				{ "name": "Black",		"file": "2018/09/black",			"noun": "negro", "feminine": "negra" }
+			],
+	"author": "Juan Perez"
+}

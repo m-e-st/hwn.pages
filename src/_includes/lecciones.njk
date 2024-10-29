@@ -4,12 +4,22 @@
   --	----------------------------------------------------------------
   -->
 
+{% if site.env %}
+	<h1 class="w3-center w3-blue-gray">Lecciones de las semanas</h1>
+	<br>
+	<div class="w3-section w3-panel w3-pale-yellow w3-leftbar w3-rightbar w3-border-yellow">
+		<p class="w3-text-indigo w3-center w3-padding w3-wide" style="font-size:2em;font-weight:bolder">
+			Este contenido aún no está disponible.
+		</p>
+	</div>
+	<br>
+{% else %}
 <details open>
 	<summary>
 		<button onclick="closeDetails();" class="w3-btn w3-right" style="margin-top:8px" title="Todas las notas están cerradas">
 			{% lucide "minimize", { "stroke": "#FFF" }%}
 		</button>
-		<h1 class="w3-center w3-indigo">Lecciones de las semanas.</h1>
+		<h1 class="w3-center  w3-blue-gray">Lecciones de las semanas</h1>
 	</summary>
 
 	<article class="w3-section">
@@ -40,3 +50,4 @@
 		}
 	}
 </script>
+{% endif %}

@@ -1,0 +1,58 @@
+---
+layout: base.njk
+permalink: "{{ page.filePathStem }}.html"
+description: "Startseite"
+
+apps:
+ - caption: Mondly
+   img: logo_mondly.svg
+   url: https://www.mondly.com
+ - caption: duolingo
+   img: logo_duolingo.svg
+   url: https://www.duolingo.com/
+ - caption: MEMRISE
+   img: logo_memrise.svg
+   url: https://www.memrise.com
+ - caption: "Babbel"
+   img: logo_babbel.svg
+   url: https://www.babbel.com/
+
+dicts:
+ - caption: Word Reference
+ - url: https://www.wordreference.com/esde
+ 
+---
+
+{% macro image (name) %}
+"{{site.imagedir}}/{{name}}"
+{% endmacro %}
+
+
+<!-- Navigation (Sits on top) -->
+<header id="header">
+	<nav class="w3-top w3-bar w3-pale-yellow w3-border-pale-red w3-topbar w3-bottombar w3-paddingx w3-card w3-center w3-wide w3-opacity-min">
+		<a href="/" class="w3-bar-item w3-btn w3-left">Utillaje</a>
+		<a href="/" class="w3-right w3-bar-item w3-btn">Inicio</a>
+	</nav>
+	<div class="w3-padding-32"></div>
+</header>
+
+<main class="w3-container">
+	<section class="w3-row-padding">
+		{% for app in apps %}
+		<article class="w3-quarter">
+			<div class="w3-panel w3-border w3-card w3-center" style="margin:16px;height:200px;">
+				<div class="w3-display-container" style="height:64px
+				">
+					<img src={{ image(app.img) }} class="w3-middle w3-padding ">
+				</div>
+			<hr style="">
+			<h3>{{ app.caption }}</h3>
+			</div>
+		</article>
+		{% endfor %}
+			<img src="static/pagelogo.svg">
+	</section>
+</main>
+
+
