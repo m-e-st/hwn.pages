@@ -16,12 +16,13 @@ sections:
   - "alfabeto"
   - "números"
   - "colores"
+  - "calendario"
   - "lecciones"
 
 ---
 
 {% macro image (name, ext='svg') %}
-"{{site.imagedir}}/{{name}}.{{ext}}"
+'{{site.imagedir}}/{{name}}.{{ext}}'
 {% endmacro %}
 
 <style>
@@ -104,24 +105,11 @@ summary { list-style:none;margin-bottom:4px }
 	{% endfor %}
 
 	<!-- End of page -->
-	<section class="w3-section">
-		<div class="w3-panel  w3-pale-yellow">
-			<h3 class="w3-center">Fin de la página</h3>
-		</div>
-		<div class="w3-padding w3-wide w3-small w3-text-gray {{ 'w3-white' if site.env else 'w3-sand'}}" style="margin-top:-16px;">
-			<p>
-			Este sitio web es privado y no se utiliza con fines comerciales. 
-			No hay publicidad ni almacenamiento de datos, salvo el funcionamiento normal de un servidor web.
-			Todas las imágenes utilizadas son de dominio público o han sido creadas por generadores de AI.
-			</p>
-			<p>
-			Mi español no es suficiente para crear los textos de este sitio web. 
-			Por lo tanto, los textos adjuntos han sido creados con el traductor automático 
-			<a style="text-decoration:none;color:blue" href="https://www.deepl.com/es/translator" target="deepl">deepl</a>. 
-			¡Las máquinas cometen errores!
-			</p>
-		</div>
+	<section id="final" class="w3-section">
+	{% include "final.njk" %}
 	</section>
+	
+
 
 </main>
 <!-- End Content -->

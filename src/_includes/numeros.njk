@@ -33,17 +33,6 @@ details>ul>li>span {
 
 <script>
 let stateNumeroDisplay = false;
-
-function toggleArticles() {
-	const elemNumeros = document.getElementById("numberParent");
-	const listDetails = elemNumeros.getElementsByTagName("details");
-	toggle = ! toggle;
-	for (let i = 0; i < listDetails.length; i++) {
-		console.log(i, listDetails[i].open);
-		listDetails[i].open = toggle;
-		console.log(i, " ==>", listDetails[i].open);
-	}
-}
 </script>
 
 <div class="w3-display-container">
