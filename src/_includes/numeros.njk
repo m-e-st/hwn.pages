@@ -5,10 +5,11 @@
   -->
 
 {% macro item (number, text='', icon=true) %}
-<li><b>{{number}}</b>
+<li {%- if icon -%}onclick="number_{{number}}.play(); false;"{%- endif -%}>
+	<b>{{number}}</b>
 	<span
 	{%- if icon %}
-		onclick="number_{{number}}.play(); false;"
+
 		style="cursor:progress";
 		> {% lucide "play", {size:12} %}
 	{% else %}

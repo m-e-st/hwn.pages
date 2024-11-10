@@ -30,7 +30,7 @@ function scrambleColors() {
 	const listColores = elemColores.children;
 	let i, s, t;
 	listColores[0].parentNode.insertBefore(listColores[0], listColores[1]);
-	for (i = 0; i < 20; i++) {
+	for (i = 0; i < 32; i++) {
 		s = getRandomInt(0, listColores.length);
 		t = getRandomInt(0, listColores.length);
 		if (s != t) {

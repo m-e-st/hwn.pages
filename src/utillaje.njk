@@ -5,21 +5,28 @@ description: "Startseite"
 
 apps:
  - caption: Mondly
-   img: logo_mondly.svg
+   type: mobile-app
+   img: logo.mondly.svg
    url: https://www.mondly.com
  - caption: duolingo
-   img: logo_duolingo.svg
+   type: mobile-app
+   img: logo.duolingo.svg
    url: https://www.duolingo.com/
- - caption: MEMRISE
-   img: logo_memrise.svg
+ - caption: Memrise
+   type: mobile-app
+   img: logo.memrise.svg
    url: https://www.memrise.com
  - caption: "Babbel"
-   img: logo_babbel.svg
+   type: mobile-app
+   img: logo.babbel.svg
    url: https://www.babbel.com/
-
-dicts:
+ - caption: "Grammar"
+   type: ebook
+ - caption: "Spanish blog"
+   type: blog
  - caption: Word Reference
- - url: https://www.wordreference.com/esde
+   type: dictionary
+   url: https://www.wordreference.com/esde
  
 ---
 
@@ -40,14 +47,12 @@ dicts:
 <main class="w3-container">
 	<section class="w3-row-padding">
 		{% for app in apps %}
-		<article class="w3-quarter">
-			<div class="w3-panel w3-border w3-card w3-center" style="margin:16px;height:200px;">
-				<div class="w3-display-container" style="height:64px
-				">
-					<img src={{ image(app.img) }} class="w3-middle w3-padding ">
-				</div>
-			<hr style="">
-			<h3>{{ app.caption }}</h3>
+		<article class="w3-mobile w3-col l3 m6 ">
+			<div class="w3-panel w3-border w3-card" style="margin:16px;height:200px;line-height:68px">
+				<img src={{ image('type.'+app.type+'.svg') }} class="w3-right w3-margin-top" style="height:36px;">
+				<img src={{ image(app.img) }} class="w3-left w3-margin-top" style="max-height:46px;max-width:120px">
+				&nbsp;
+				<h2 class="w3-topbar">{{ app.caption }}</h2>
 			</div>
 		</article>
 		{% endfor %}

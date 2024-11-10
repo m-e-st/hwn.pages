@@ -1,5 +1,6 @@
-# friends/espanol
+# elektrolurch/espanol
 
+Anfänger Seite zum Spanisch-Lernen
 
 #### Entwicklung
 

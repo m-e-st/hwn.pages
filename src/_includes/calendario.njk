@@ -4,19 +4,16 @@
   --	----------------------------------------------------------------
   -->
 
-{% macro item2 (prefix, number, text='', icon=false) %}
-<li><b>{{number}}</b>
+{% macro itemPlay (type, name, noun, icon=true) %}
+<li>
 	<span
 	{%- if icon %}
-		onclick="{{ prefix }}{{number}}.play(); false;"
+		onclick="{{ type }}_{{name}}.play(); false;"
 		style="cursor:progress";
-		> {% lucide "play", {size:12} %}
-	{% else %}
-		style="cursor:none";
-		> {% lucide "minus", {size:12} %}
+		> {% lucide "volume", {size:12} %}
 	{% endif -%}
 	</span>
-	{{text}}
+	<b>{{noun}}</b>
 </li>
 {% endmacro %}
 
@@ -51,13 +48,9 @@ let stateCalendarioDisplay = false;
 		<details open>
 			<summary class="{{ classList }}">días</summary>
 			<ul>
-				{{ item2('d',1, "lunes", false) }}
-				{{ item2('d',2, "martes", false) }}
-				{{ item2('d',3, "miércoles", false) }}
-				{{ item2('d',4, "jueves", false) }}
-				{{ item2('d',5, "viernes", false) }}
-				{{ item2('d',6, "sábado", false) }}
-				{{ item2('d',7, "domingo", false) }}
+				{% for item in calendario.days %}
+				{{ itemPlay('day', item.name, item.noun) }}
+				{% endfor %}				
 			</ul>
 		</details>
 	</article>
@@ -65,18 +58,9 @@ let stateCalendarioDisplay = false;
 		<details open>
 			<summary class="{{ classList }}">meses</summary>
 			<ul>
-				{{ item2('m',1, "enero", false) }}
-				{{ item2('m',2, "febrero", false) }}
-				{{ item2('m',3, "marzo", false) }}
-				{{ item2('m',4, "abril", false) }}
-				{{ item2('m',5, "mayo", false) }}
-				{{ item2('m',6, "junio", false) }}
-				{{ item2('m',7, "julio", false) }}
-				{{ item2('m',8, "agosto", false) }}
-				{{ item2('m',9, "septiembre", false) }}
-				{{ item2('m',10, "octubre", false) }}
-				{{ item2('m',11, "noviembre", false) }}
-				{{ item2('m',12, "diciembre", false) }}
+				{% for item in calendario.months %}
+				{{ itemPlay('month', item.name, item.noun) }}
+				{% endfor %}				
 			</ul>
 		</details>
 	</article>
@@ -84,51 +68,66 @@ let stateCalendarioDisplay = false;
 		<details open>
 			<summary class="{{ classList }}">temporadas</summary>
 			<ul>
-				{{ item2('t',1, "primavera") }}
-				{{ item2('t',2, "verano") }}
-				{{ item2('t',3, "otoño") }}
-				{{ item2('t',4, "invierno") }}
+				{% for item in calendario.seasons %}
+				{{ itemPlay('season', item.name, item.noun, false) }}
+				{% endfor %}		
 			</ul>
 		</details>
 	</article>
-<!--
 	<article class = "w3-col m6 l3">
-		<details>
-			<summary class="{{ classList }}">30 &hellip; 39</summary>
+		<details open>
+			<summary class="{{ classList }}">TEST</summary>
 			<ul>
-				{{ item2('d',30, "treinta") }}
-				{{ item2('d',31, "treinta y uno", false) }}
-				{{ item2('d',32, "treinta y dos", false) }}
-				{{ item2('d',33, "treinta y tres", false) }}
-				{{ item2('d',34, "treinta y cuatro") }}
-				{{ item2('d',35, "treinta y cinco", false) }}
-				{{ item2('d',36, "treinta y seis", false) }}
-				{{ item2('d',37, "treinta y siete", false) }}
-				{{ item2('d',38, "treinta y ocho", false) }}
-				{{ item2('d',39, "treinta y nueve", false) }}
+			{% for item in calendario.days %}
+				<li>{{item.name}} | {{ item.file }} | {{ item.noun }}</li>
+			{% endfor %}
 			</ul>
 		</details>
 	</article>
--->
   </div>
 </div>
 <div>
-	{% for id, item in numeros.list %}
-	<audio id="number_{{ item.number }}"><source type="audio/mpeg" src="{{ numeros.prefix }}{{ item.number }}{{ numeros.suffix }}">no audio</audio>
+	{% for item in calendario.days %}
+	<audio id="day_{{ item.name }}"><source type="audio/mpeg" src="{{ calendario.prefix }}{{ item.file }}{{ calendario.suffix }}">no audio</audio>
+	{% endfor %}
+	{% for item in calendario.months %}
+	<audio id="month_{{ item.name }}"><source type="audio/mpeg" src="{{ calendario.prefix }}{{ item.file }}{{ calendario.suffix }}">no audio</audio>
 	{% endfor %}
 </div>
 
 <!-- The reference section is only shown in the development environment -->
 {% if site.env %}
-<!--
 <div class="w3-center w3-light-gray w3-opacity-max">
 	<i>La salida de voz procede del sitio web de Babbel</i>
 </div>
--->
 {% else %}
 <div class="reference w3-panel w3-sand w3-sans-serif w3-text-indigo">
 	<b class="w3-padding" style="vertical-align:middle;">References</b>
-	<a class="w3-btn" href="https://www.babbel.com/en/magazine/counting-in-spanish", target="babbel">Babbel article</a>
+	<a class="w3-btn" href="https://www.babbel.com/en/magazine/how-to-write-the-date-in-spanish", target="babbel">Babbel article</a>
 	<button class="w3-btn" onclick="number_89.play();false;">Babbel audio</button>
 </div>
 {% endif %}
+
+<script>
+
+function spanishDateFull (day, month, year) { 
+	const d = new Date(year, month-1, day);
+	return d.toLocaleDateString("es-ES", {"dateStyle":"full"});
+}
+
+function spanishWeekday (day, month, year, width=0) {
+	const weekdays = [
+						[ "domingo",	"D", "do", "dom", "dom."], 
+						[ "lunes",		"L", "lu", "lun", "lun."], 
+						[ "martes",		"M", "ma", "mar", "mart."], 
+						[ "miércoles",	"X", "mi", "mié", "miérc."], 
+						[ "jueves",		"J", "ju", "jue", "juev."], 
+						[ "viernes",	"V", "vi", "vie", "vier."], 
+						[ "sábado",		"S", "sa", "sáb", "sáb."]
+					];
+	const d = new Date(year, month-1, day);
+	const dow = d.getDay();
+	return weekdays[dow%7][width%5];
+}
+
+</script>
