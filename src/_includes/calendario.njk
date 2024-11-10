@@ -74,8 +74,9 @@ let stateCalendarioDisplay = false;
 			</ul>
 		</details>
 	</article>
+	{% if not site.env %}
 	<article class = "w3-col m6 l3">
-		<details open>
+		<details>
 			<summary class="{{ classList }}">TEST</summary>
 			<ul>
 			{% for item in calendario.days %}
@@ -84,8 +85,11 @@ let stateCalendarioDisplay = false;
 			</ul>
 		</details>
 	</article>
+	{% endif %}
   </div>
 </div>
+
+<!-- Audio Player DIV -->
 <div>
 	{% for item in calendario.days %}
 	<audio id="day_{{ item.name }}"><source type="audio/mpeg" src="{{ calendario.prefix }}{{ item.file }}{{ calendario.suffix }}">no audio</audio>
