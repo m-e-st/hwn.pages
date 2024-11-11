@@ -5,7 +5,7 @@
   -->
 
 {% macro item (number, text='', icon=true) %}
-<li {%- if icon -%}onclick="number_{{number}}.play(); false;"{%- endif -%}>
+<li {% if icon %}onclick="number_{{number}}.play(); false;"{%- endif -%}>
 	<b>{{number}}</b>
 	<span
 	{%- if icon %}
