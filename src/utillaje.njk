@@ -7,42 +7,92 @@ apps:
  - caption: Mondly
    logo: mondly
    type: mobile-app
-   url: https://www.mondly.com
+   home: https://www.mondly.com
+   android: https://play.google.com/store/apps/details?id=com.atistudios.mondly.languages
+   iphone: https://apps.apple.com/us/app/learn-33-languages-with-mondly/id987873536
+   review: https://www.krioda.com/mondly-review/
  - caption: DuoLingo
    logo: duolingo
    type: mobile-app
-   url: https://www.duolingo.com/
+   home: https://www.duolingo.com/
+   android: https://play.google.com/store/apps/details?id=com.duolingo
+   iphone: https://apps.apple.com/us/app/duolingo-language-lessons/id570060128
+   review: https://www.krioda.com/duolingo-review/
  - caption: Memrise
    logo: memrise
    type: mobile-app
-   url: https://www.memrise.com
+   home: https://www.memrise.com
+   android: https://play.google.com/store/apps/details?id=com.memrise.android.memrisecompanion
+   iphone: https://apps.apple.com/us/app/memrise-easy-language-learning/id635966718
+   review: https://www.krioda.com/memrise-review/
  - caption: "Babbel"
    type: mobile-app
    logo: babbel
-   url: https://www.babbel.com/
- - caption: "Grammar"
+   home: https://www.babbel.com/
+   android: https://play.google.com/store/apps/details?id=com.babbel.mobile.android.en
+   iphone: https://apps.apple.com/us/app/babbel-language-learning/id829587759
+   review: https://www.krioda.com/babbel-review/
+   
+   
+   
+etc:
+ - caption: "Libro de gramática"
    type: ebook
- - caption: "Spanish blog"
+   logo: ebook
+   url: https://www.spanisch-lehrbuch.de
+ - caption: "Blogs en Internet"
    type: blog
- - caption: Word Reference
-   type: dictionary
-   url: https://www.wordreference.com
-   url2: https://www.wordreference.com/esde
+   logo: blog
+   urls:
+      - https://www.clozemaster.com/blog/topics/learn-spanish/
+      - xxx
  - caption: Dict. Leo
    logo: dict-leo
    type: dictionary
    url: https://dict.leo.org/spanish-english/
- 
+ - caption: Word Reference
+   logo: wordreference
+   type: dictionary
+   urls: 
+      - https://www.wordreference.com
+      - https://www.wordreference.com/esde
 ---
 
 {% macro image (name, type="type", ext="svg") %}
 "{{site.imagedir}}/{{type}}.{{name}}.{{ext}}"
 {% endmacro %}
 
+<style>
+
+.x1-row { margin: 0px -16px; }
+.x1-row, .x1-row > .x1-column { padding:8px; }
+.x1-column { float:left; width: 25%; }
+.x1-row:after { content:""; display:table; clear:both; }
+.x1-content { padding:16px; overflow:scroll; border:1px solid #ccc}
+
+@media screen and (min-width: 1201px)	{ .x1-column { width: 25%; } 	}
+@media screen and (max-width: 1200px)	{ .x1-column { width: 33.33%; }	}
+@media screen and (max-width: 900px)	{ .x1-column { width: 50%; }	}
+@media screen and (max-width: 600px)	{ .x1-column { width: 100%; }	}
+@media screen and (min-width: 601px)	{ .x1-content { height:320px; }	}
+
+.x1-content > h2 { margin-top:-0px; }
+.x1-content > hr { border:6px solid #ccc; margin-top:8px; }
+
+.x1-info > a { height:72px;width:72px; }
+.x1-info > a > image{ height:48px;width:48px; }
+
+.icon-blue { filter: invert(0.4) sepia(1) saturate(5) hue-rotate(170deg); }
+.icon-green { filter: invert(0.4) sepia(1) saturate(5) hue-rotate(105deg); }
+.icon-orange { filter: invert(0.5) sepia(1) saturate(6) hue-rotate(0deg); }
+.icon-yellow { filter: invert(0.8) sepia(1) saturate(5) hue-rotate(0deg); }
+.icon-neutral { filter: invert(0.5) sepia(1) saturate(6) hue-rotate(0deg); }
+
+</style>
 
 <!-- Navigation (Sits on top) -->
 <header id="header">
-	<nav class="w3-top w3-bar w3-pale-yellow w3-border-pale-red w3-topbar w3-bottombar w3-paddingx w3-card w3-center w3-wide w3-opacity-min">
+	<nav class="w3-top w3-bar w3-pale-yellow w3-border-pale-red w3-topbar w3-bottombar w3-card w3-center w3-wide w3-opacity-min">
 		<a href="/" class="w3-bar-item w3-btn w3-left">Utillaje</a>
 		<a href="/" class="w3-right w3-bar-item w3-btn">Inicio</a>
 	</nav>
@@ -50,18 +100,81 @@ apps:
 </header>
 
 <main class="w3-container">
-	<section class="w3-row-padding">
+	<section class="x1-row">
+<!--	Apps from list	-->
 		{% for app in apps %}
-		<article class="w3-mobile w3-col l4 m6 ">
-			<div class="w3-panel w3-border w3-card" style="margin:16px;height:200px;line-height:60px">
-				<img src={{ image(app.logo, 'logo') }} class="w3-right w3-margin-top" style="max-height:48px">
-				<h2 class="w3-bottombar">{{ app.caption }}</h2>
+		<article class="x1-column w3x-pale-red">
+			<div class="x1-content w3-card w3x-pale-yellow">
+				<img src={{ image(app.logo, 'logo') }} class="w3-right" style="max-height:48px">
+				<h2>{{ app.caption }}</h2>
+				<hr>
+				<div class="x1-info">
+					<a class="w3-btn" href="{{ app.home }}"><img src={{ image('home', 'app') }} width="48px" height="48px"></a>
+					<a class="w3-btn" href="{{ app.android }}"><img src={{ image('android', 'app') }} width="48px" height="48px"></a>
+					<a class="w3-btn" href="{{ app.iphone }}"><img src={{ image('iphone', 'app')  }} width="48px" height="48px"></a>
+					<a class="w3-btn" href="{{ app.review }}"><img src={{ image('review', 'icon')  }} width="48px" height="48px"></a>
+				</div>
 			</div>
-				<img src={{ image(app.type, 'type') }} class="w3-right w3-margin-top" style="height:36px;">
 		</article>
 		{% endfor %}
-			<img src="static/pagelogo.svg">
+		
+<!--	Grammar Books		-->
+		<article class="x1-column">
+			<div class="x1-content w3-card">
+				<img src={{ image('ebook', 'logo') }} class="w3-right" style="max-height:48px">
+				<h2>Gramática</h2>
+				<hr>
+				<div class="x1-info icon-blue">
+					<div class="w3-wide">Libro de gramática (alemán)</div>
+					<a class="w3-btn" href="https://www.spanisch-lehrbuch.de">
+						<img src={{ image('home', 'app') }} width="48px" height="48px">
+					</a>
+					<a class="w3-btn" href="https://www.spanisch-lehrbuch.de/pdf/de_es_lb_cd.pdf" download="spanisch-grammatik.pdf">
+						<img src={{ image('download-pdf', 'icon') }} width="48px" height="48px">
+					</a>
+					<img style="margin:0 16px;padding:4px" src={{ image('free', 'icon') }} width="48px" height="48px">
+				</div>
+				<div class="x1-info icon-green">
+					<div class="w3-wide">Gramática breve (alemán)</div>
+					<a class="w3-btn" href="https://www.sprachurlaub.de/service/lernhilfen/grammatik-kostenlos/spanisch-lernen.htm">
+						<img src={{ image('home', 'app') }} width="48px" height="48px">
+					</a>
+					<a class="w3-btn" href="https://www.sprachurlaub.de/fileadmin/user_upload/Grammatik_Sprachfuehrer/sprachurlaub.de_grammatik-spanisch.pdf" download="kurzgrammatik-spanisch.pdf">
+						<img src={{ image('download-pdf', 'icon') }} width="48px" height="48px">
+					</a>
+					<img style="margin:0 16px;padding:4px" src={{ image('free', 'icon') }} width="48px" height="48px">
+				</div>
+			</div>
+		</article>
+		
+<!--	Dictionaries		-->
+		<article class="x1-column">
+			<div class="x1-content w3-card">
+				<img src={{ image('dictionary', 'logo') }} class="w3-right" style="max-height:48px">
+				<h2>Diccionarios</h2>
+				<hr>
+				<div class="x1-info">
+					<div class="w3-wide icon-blue">Word reference</div>
+					<a class="w3-btn" href="https://www.wordreference.com/esde">
+						<img src={{ image('german', 'circle') }} width="48px" height="48px">
+					</a>
+					<a class="w3-btn" href="https://www.wordreference.com/esen">
+						<img src={{ image('english', 'circle') }} width="48px" height="48px">
+					</a>
+				</div>
+				<div class="x1-info">
+					<div class="w3-wide icon-green">LEO Dictionary</div>
+					<a class="w3-btn" href="https://dict.leo.org/spanisch-deutsch/">
+						<img src={{ image('german', 'circle') }} width="48px" height="48px">
+					</a>
+					<a class="w3-btn" href="https://dict.leo.org/spanish-english/">
+						<img src={{ image('english', 'circle') }} width="48px" height="48px">
+					</a>
+				</div>
+			</div>
+		</article>
 	</section>
+
 </main>
 
 
