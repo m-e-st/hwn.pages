@@ -33,8 +33,6 @@ apps:
    iphone: https://apps.apple.com/us/app/babbel-language-learning/id829587759
    review: https://www.krioda.com/babbel-review/
    
-   
-   
 etc:
  - caption: "Blogs en Internet"
    type: blog
@@ -47,7 +45,13 @@ etc:
 "{{site.imagedir}}/{{type}}.{{name}}.{{ext}}"
 {% endmacro %}
 
+{% macro button (url, name, type, tip='', download='') %}
+<a class="w3-btn" href="{{ url }}" {% if download -%} download="{{ download }}"{%- endif -%}><img src="{{site.imagedir}}/{{type}}.{{name}}.svg" title={{ tip }} width="48px" height="48px"></a>
+{% endmacro %}
+
 <style>
+body {font-family:"Times New Roman", serif}
+h1,h2,h3,h4,h5,h6 {font-family:serif; letter-spacing:2px}
 
 .x1-row { margin: 0px -16px; }
 .x1-row, .x1-row > .x1-column { padding:8px; }
@@ -73,13 +77,14 @@ etc:
 .icon-yellow { filter: invert(0.8) sepia(1) saturate(5) hue-rotate(0deg); }
 .icon-neutral { filter: invert(0.5) sepia(1) saturate(6) hue-rotate(0deg); }
 
+img{ text-wrap: nowrap}
 </style>
 
 <!-- Navigation (Sits on top) -->
 <header id="header">
 	<nav class="w3-top w3-bar w3-pale-yellow w3-border-pale-red w3-topbar w3-bottombar w3-card w3-center w3-wide w3-opacity-min">
-		<a href="/" class="w3-bar-item w3-btn w3-left">Utillaje</a>
-		<a href="/" class="w3-right w3-bar-item w3-btn">Inicio</a>
+		<a href="/" class="w3-bar-item w3-btn w3-left">{{ site.title }}</a>
+		<a href="#" class="w3-right w3-bar-item w3-btn">{{ page.fileSlug | capitalize }}</a>
 	</nav>
 	<div class="w3-padding-32"></div>
 </header>
@@ -94,10 +99,10 @@ etc:
 				<h2>{{ app.caption }}</h2>
 				<hr>
 				<div class="x1-info">
-					<a class="w3-btn" href="{{ app.home }}"><img src={{ image('home', 'app') }} width="48px" height="48px"></a>
-					<a class="w3-btn" href="{{ app.android }}"><img src={{ image('android', 'app') }} width="48px" height="48px"></a>
-					<a class="w3-btn" href="{{ app.iphone }}"><img src={{ image('iphone', 'app')  }} width="48px" height="48px"></a>
-					<a class="w3-btn" href="{{ app.review }}"><img src={{ image('review', 'icon')  }} width="48px" height="48px"></a>
+					{{ button (app.home, "home", "app", "WWW⠀🇬🇧") }} <!--- braille blank = unicode 2800 -->
+					{{ button (app.android, "android", "app", "Android⠀app") }} <!--- braille blank = unicode 2800 -->
+					{{ button (app.iphone, "iphone", "app", "IPhone⠀app") }}
+					{{ button (app.review, "review", "icon", "Review⠀🇬🇧") }}
 				</div>
 			</div>
 		</article>
@@ -106,28 +111,20 @@ etc:
 <!--	Grammar Books		-->
 		<article class="x1-column">
 			<div class="x1-content w3-card">
-				<img src={{ image('ebook', 'logo') }} class="w3-right" style="max-height:48px">
+				<img src={{ image('ebook', 'type') }} class="w3-right" style="max-height:48px">
 				<h2>Gramática</h2>
 				<hr>
 				<div class="x1-info icon-blue">
 					<div class="w3-wide">Libro de gramática (alemán)</div>
-					<a class="w3-btn" href="https://www.spanisch-lehrbuch.de">
-						<img src={{ image('home', 'app') }} width="48px" height="48px">
-					</a>
-					<a class="w3-btn" href="https://www.spanisch-lehrbuch.de/pdf/de_es_lb_cd.pdf" download="spanisch-grammatik.pdf">
-						<img src={{ image('download-pdf', 'icon') }} width="48px" height="48px">
-					</a>
-					<img style="margin:0 16px;padding:4px" src={{ image('free', 'icon') }} width="48px" height="48px">
+					{{ button ("https://www.spanisch-lehrbuch.de", "home", "app", "WWW⠀🇩🇪") }}
+					{{ button ("https://www.spanisch-lehrbuch.de/pdf/de_es_lb_cd.pdf", "download-pdf", "icon", "Download⠀🇩🇪", "spanisch-grammatik") }}
+					<img style="margin:0 16px;padding:4px" src={{ image('free', 'icon') }} width="48px" height="48px" title="ebook is free for private use.">
 				</div>
 				<div class="x1-info icon-green">
 					<div class="w3-wide">Gramática breve (alemán)</div>
-					<a class="w3-btn" href="https://www.sprachurlaub.de/service/lernhilfen/grammatik-kostenlos/spanisch-lernen.htm">
-						<img src={{ image('home', 'app') }} width="48px" height="48px">
-					</a>
-					<a class="w3-btn" href="https://www.sprachurlaub.de/fileadmin/user_upload/Grammatik_Sprachfuehrer/sprachurlaub.de_grammatik-spanisch.pdf" download="kurzgrammatik-spanisch.pdf">
-						<img src={{ image('download-pdf', 'icon') }} width="48px" height="48px">
-					</a>
-					<img style="margin:0 16px;padding:4px" src={{ image('free', 'icon') }} width="48px" height="48px">
+					{{ button ("https://www.sprachurlaub.de/service/lernhilfen/grammatik-kostenlos/spanisch-lernen.htm", "home", "app", "WWW⠀🇩🇪") }}
+					{{ button ("https://www.sprachurlaub.de/fileadmin/user_upload/Grammatik_Sprachfuehrer/sprachurlaub.de_grammatik-spanisch.pdf", "download-pdf", "icon", "Download⠀🇩🇪", "kurzgrammatik-grammatik") }}
+					<img style="margin:0 16px;padding:4px" src={{ image('free', 'icon') }} width="48px" height="48px" title="ebook is free for private use.">
 				</div>
 			</div>
 		</article>
@@ -135,26 +132,37 @@ etc:
 <!--	Dictionaries		-->
 		<article class="x1-column">
 			<div class="x1-content w3-card">
-				<img src={{ image('dictionary', 'logo') }} class="w3-right" style="max-height:48px">
+				<img src={{ image('dictionary', 'type') }} class="w3-right" style="max-height:48px">
 				<h2>Diccionarios</h2>
 				<hr>
 				<div class="x1-info">
 					<div class="w3-wide icon-blue">Word reference</div>
-					<a class="w3-btn" href="https://www.wordreference.com/esde">
-						<img src={{ image('german', 'circle') }} width="48px" height="48px">
-					</a>
-					<a class="w3-btn" href="https://www.wordreference.com/esen">
-						<img src={{ image('english', 'circle') }} width="48px" height="48px">
-					</a>
-				</div>
+					{{ button ("https://www.wordreference.com/esde", "german", "circle", "Online⠀Wörterbuch⠀🇪🇸⠀⋄⠀🇩🇪") }}
+					{{ button ("https://www.wordreference.com/esen", "english", "circle", "Online⠀dictionary⠀🇪🇸⠀⋄⠀🇬🇧") }}
 				<div class="x1-info">
 					<div class="w3-wide icon-green">LEO Dictionary</div>
-					<a class="w3-btn" href="https://dict.leo.org/spanisch-deutsch/">
-						<img src={{ image('german', 'circle') }} width="48px" height="48px">
-					</a>
-					<a class="w3-btn" href="https://dict.leo.org/spanish-english/">
-						<img src={{ image('english', 'circle') }} width="48px" height="48px">
-					</a>
+					{{ button ("https://dict.leo.org/spanisch-deutsch/", "german", "circle", "Online⠀Wörterbuch⠀🇪🇸⠀⋄⠀🇩🇪") }}
+					{{ button ("https://dict.leo.org/spanish-english/", "english", "circle", "Online⠀dictionary⠀🇪🇸⠀⋄⠀🇬🇧") }}
+				</div>
+			</div>
+		</article>
+		
+<!--	Sources		-->
+		<article class="x1-column">
+			<div class="x1-content w3-card">
+				<img src={{ image('resources', 'type') }} class="w3-right" style="max-height:48px">
+				<h2>Recursos</h2>
+				<hr>
+				<div class="x1-info">
+					<div class="w3-wide icon-blue">Textos</div>
+					{{ button ("#", "text", "icon", "Coming⠀soon⠀...") }}
+				<div class="x1-info">
+					<div class="w3-wide icon-green">Podcasts</div>
+					{{ button ("#", "podcast", "icon", "Coming⠀soon⠀...") }}
+				</div>
+				<div class="Blogs">
+					<div class="w3-wide icon-orange">Blogs</div>
+					{{ button ("#", "blog", "icon", "Coming⠀soon⠀...") }}
 				</div>
 			</div>
 		</article>

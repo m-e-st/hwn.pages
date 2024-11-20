@@ -8,7 +8,7 @@ menu:
     - caption: "secciones"
       modal: "popup_sections"
     - caption: utillaje
-      target: utillaje
+      target: utillaje.html
 
 sections:
   - "sobre"
@@ -43,7 +43,7 @@ summary { list-style:none;margin-bottom:4px }
 
 <!-- Navigation (Sits on top) -->
 <nav class="w3-top w3-bar {{ 'w3-white' if site.env else 'w3-sand'}} w3-padding w3-card w3-wide" style="margin-left:-16px;">
-	<a href="#home" class="w3-bar-item w3-btn">{{ site.title }}</a>
+	<a href="#home" class="w3-bar-item w3-btn" style="text-transform:initial">{{ site.title }}</a>
 	<div class="w3-right w3-hide-small">
 		{% for item in menu %}
 			{% if item.target %}
@@ -68,19 +68,6 @@ summary { list-style:none;margin-bottom:4px }
 		<a href="#indice">{% lucide "table-of-contents" %}</a>
 	</div>
 </nav>
-
-<!-- Navigation popup for Secciones -->
-<div id="popup_sections" class="w3-modal" style="">
-  <div class="w3-modal-content" style="width:300px;top:8px">
-		<div class="w3-bar-block w3-wide">
-			<button class="w3-btn w3-right" onclick="document.getElementById('popup_sections').style.display='none'">&times</button>
-			{% for item in sections %}
-			<a class="w3-btn w3-bar-item w3-mobile" href="#{{ item | Ascii }}" onclick="document.getElementById('popup_sections').style.display='none'">{{ item }}</a>
-			{% endfor %}
-		</div>
-  </div>
-</div>
-
 
 <!-- Start Content -->
 <main id="home" class="w3-white w3-content">
