@@ -1,0 +1,83 @@
+---
+type: layout
+version: 2024-01-30
+layout: base.njk
+---
+
+<!-- benötigt die Variaben 
+  --	redirect.delay	Delay des Redirect (default 10 sec)
+  --	redirect.url	Zieladresse des Redirect (default '/')
+  -->
+
+{% if redirect.dragon %} <!-- DRAGON REDIRECTION SCREEN -->
+
+	<style>
+		.rd_main {	
+			height:100vh; 
+			background-color: #DEF; 
+		}
+
+		.rd_image {	
+			height:100vh; 
+			background-color: #DEF; 
+			background-image: url("{{ imagedir | d('/static/img') }}/dragon.png");
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-position: center; 
+			background-size: auto;
+		}
+		.rd_text {
+			text-align: center;	
+			padding: 0.5em;
+			color: #ace;
+			font-size:1.5rem;
+			font-size-adjust:0.58;
+			font-family: Arial, Helvetica, sans-serif;
+			font-stretch:expanded;
+			font-variant: small-caps;
+			font-weight: bold;
+		}		
+	</style>
+
+	<div class="rd_main rd_image" 
+		 onclick="window.location.replace('{{ redirect.url | d('/') }}');"
+		 oncontextmenu="javascript:history.back();">
+		<div class="rd_text">
+			Sie werden weitergeleitet &hellip;
+		</div>
+	</div>
+	
+{% else %} <!-- BUTTON REDIRECTION SCREEN -->
+
+	<style>
+	.center-screen {
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  text-align: center;
+	  min-height:100vh;
+	  background-color: #DEF;
+	}
+	.button {
+		text-align: center;
+		padding:1rem 1.5rem;
+		width: 7.5rem;
+		color:red;
+		display:table;
+		margin: 0.5rem;
+	}
+	</style>
+
+	<main style="margin:auto;padding:0;overflow:hidden;cursor:none;height:100vh;width:100%">
+		<div class= "center-screen">
+			<a  class="button w3-round-xlarge w3-blue w3-hover-pale-blue w3-button w3-xlarge" 
+				href="{{ redirect.url | d('/') }}">
+				weiter &hellip;
+			</a>
+			<a  class="button w3-round-xlarge w3-deep-orange w3-hover-pale-red w3-button w3-xlarge" 
+				href="javascript:history.back();">
+				zurück
+			</a>
+		</div>
+	</main>
+{% endif %}
