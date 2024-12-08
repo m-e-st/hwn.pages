@@ -1,6 +1,6 @@
 {
   "name": "espanol",
-  "version": "0.1.29",
+  "version": "0.1.30",
   "description": "Aprende español",
   "main": ".eleventy.js",
   "scripts": {
