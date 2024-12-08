@@ -43,7 +43,7 @@ span {
 
 </style>
 
-<div>
+<div onclick="location.href='{{ pagination.href.next }}';">
 	{% if pagination.pageNumber > 0 %}
 	<a id="prev" href="{{ pagination.href.previous }}"><span>{% lucide "chevron-left", { size:48, stroke: "#CCC" } %}</span></a>
 	{% endif %}
