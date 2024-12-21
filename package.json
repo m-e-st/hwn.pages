@@ -1,6 +1,6 @@
 {
   "name": "hwn Pages",
-  "version": "0.1.31",
+  "version": "0.1.32",
   "description": "hwn as GitHub Pages",
   "main": ".eleventy.js",
   "scripts": {
