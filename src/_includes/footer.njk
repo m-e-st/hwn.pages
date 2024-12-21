@@ -1,0 +1,20 @@
+<!--
+ --- hwn.de v2.1
+ -->
+<footer class="">
+  <div class="flex items-center flex-shrink-0 text-sm sm:flex-grow">
+	<div class="align-text-top">
+	  {%- for item in menu -%}
+		{%- if item.footer -%}
+		  <a href="{{ item.href }}" class="align-text-top inline-block text-xs nav-links font-semibold">{{ item.text }}</a>
+		{%- endif -%}
+	  {%- endfor -%}
+	</div>
+	<div class="flex-grow text-xs">
+	  <p class="text-right">
+		Powered by <a href="https://github.com/chrissy-dev/eleventy-web-starter#features">Eleventy Web Starter</a> v{{ pkg.version }} 
+		crafted by <a href="https://www.chrissy.dev">Chris Collins</a>
+	  </p>
+	</div>
+  </div>
+</footer>

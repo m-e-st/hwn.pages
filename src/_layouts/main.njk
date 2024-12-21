@@ -1,0 +1,49 @@
+---
+layout: base.njk
+
+menu:
+  - text: "Chronologie"
+    link: "history.html"
+  - text: "IT-Sicherheit"
+    link: "security.html"
+  - text: "Blog"
+    link: "blog.html"
+  - text: "Impressum"
+    link: "impressum.html"
+    bottom: yes
+
+---
+<!-- <div class="flex flex-col max-h-screen"> floats footer -->
+
+<header class="w3-top w3-pale-lime" style="height:54px;">
+	<nav class="w3-bar w3-padding w3-wide w3-text-dark-stone">
+		<a href="/" class="w3-bar-item w3-btn">{{ site.title }}</a>
+		<div class="w3-right w3-hide-small">
+			{% for item in menu %}
+				{% if not item.bottom %}
+				<a href="{{ item.link }}" class="w3-bar-item w3-btn">{{ item.text }}</a>
+				{% endif %}
+			{% endfor %}
+		</div>
+		<div class="w3-right w3-bar-item w3-hide-medium w3-hide-large">
+			<a href="/">{% lucide "menu" %}</a>
+		</div>
+	</nav>	
+</header>
+<main class="w3-container"style="margin-top:64px;">
+			{{ content | safe }}
+</main>
+<footer class="w3-bottom w3-pale-lime" style="height:40px;">
+	<div>
+			{% for item in menu %}
+				{% if item.bottom %}
+				<a href="{{ item.link }}" class="w3-bar-item w3-btn">{{ item.text }}</a>
+				{% endif %}
+			{% endfor %}
+	</div>
+	<div class="w3-right w3-hide-small">
+	</div>	
+</footer>
+
+
+

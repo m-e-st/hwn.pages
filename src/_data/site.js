@@ -1,22 +1,23 @@
 module.exports = {
-	title: "Aprendo español",
-	description: "Aprendo español",
-	caption: "Español",
+	title: "-hwn- Pages",
+	description: "-hwn published via GitHub pages",
+	caption: "-hwn-",
 	version: "0.1.0",
 	lang: "es",
-	mail: "info@elektrolurch.net",
+	mail: "mstumpp@hwn.de",
 
 	scriptdir: "/static",
 	imagedir: "/static/img",
-	//~ pagelogo: "/static/pagelogo.png",
+	pagelogo: "/static/favicon.png",
+	pagelogotype: "png",
 
 	author: {
-		name: "John Doe",
+		name: "Michael Stumpp",
 		year: 2024,
 		hide: false,
-		mail: "john@elektrolurch.net",
-		code: "&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#111;&#104;&#110;&#64;&#101;&#108;&#101;&#107;&#116;&#114;&#111;&#108;&#117;&#114;&#99;&#104;&#46;&#110;&#101;&#116;"
-	}, 
+		mail: "michael@stumpp.name",
+		code: "&#x6d;&#x69;&#x63;&#x68;&#x61;&#x65;&#x6c;&#x40;&#x73;&#x74;&#x75;&#x6d;&#x70;&#x70;&#x2e;&#x6e;&#x61;&#x6d;&#x65;"
+	},
 
 	env: process.env.ELEVENTY_ENV === 'production'
 }

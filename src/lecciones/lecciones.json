@@ -1,6 +1,0 @@
-{
-	"layout": "markdown.njk",
-	"title": "Notas de la lección",
-	"permalink": "{{ page.filePathStem }}.html"
-}
-

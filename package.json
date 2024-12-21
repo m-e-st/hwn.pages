@@ -1,10 +1,10 @@
 {
-  "name": "espanol",
+  "name": "hwn Pages",
   "version": "0.1.31",
-  "description": "Aprende español",
+  "description": "hwn as GitHub Pages",
   "main": ".eleventy.js",
   "scripts": {
-    "clean": "del public",
+    "clean": "del docs",
     "dev": "eleventy --serve --watch",
     "build": "ELEVENTY_ENV=production eleventy",
     "disabled-postbuild": "./deploy-site.sh",
