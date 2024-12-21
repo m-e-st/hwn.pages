@@ -8,7 +8,7 @@
 
 :root {
 	--lime-50:  #f7fee7;
-	--lime-100: #ecfccb;
+	--lime-100: #ecfccb;		/* lime from the hwn tailwind design */
 	--lime-200: #d9f99d;		/* w3-pale-lime		*/
 	--lime-300: #bef264;
 	--lime-400: #a3e635;		/* w3-lime			*/
@@ -25,6 +25,8 @@
 	--stone-800: #292524;		/* w3-dark-stone	*/
 
 	--slate-500: #64748B;
+	
+	
 }
 
 /*** ************************************************************** ***/

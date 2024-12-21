@@ -1,17 +1,20 @@
 ---
 layout: main.njk
 permalink: "{{ page.filePathStem }}.html"
-title: Security
+title: -hwn- Security
 description: Landing Page -hwn- Software GmbH
 date: 2021-06-30
 ---
 
-# Security
+# IT Security
 
-Die -hwn- Software GmbH schließt ihre Pforten.
-Nach 26 Jahren endet die Firmengeschichte.
+Die Werkzeuge zur IT-Security sind hier nach wie vor aufrufbar. 
+Die Pflege und Weiterentwicklung ist jedoch nicht sichergestellt.
 
-Vielen Dank an alle Kunden und Wegbegleiter, 
-die in den wechselhaften Zeiten zum Erfolg beigetragen haben.
+:::note
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
 
 ## Danke

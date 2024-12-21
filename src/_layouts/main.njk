@@ -13,36 +13,63 @@ menu:
     bottom: yes
 
 ---
-<!-- <div class="flex flex-col max-h-screen"> floats footer -->
+<style>
+.minor {
+	text-decoration:none;
+	color:#22E;
+}
+</style>
 
-<header class="w3-top w3-pale-lime" style="height:54px;">
-	<nav class="w3-bar w3-padding w3-wide w3-text-dark-stone">
-		<a href="/" class="w3-bar-item w3-btn">{{ site.title }}</a>
-		<div class="w3-right w3-hide-small">
+<header class="">
+	<nav class="w3-bar w3-padding">
+		<img class="w3-left" src={{site.pagelogo}}>
+		<a href="/" class="w3-bar-item w3-btn w3-large"><b>{{ site.title }}</b>
+		<div class="w3-right w3-hide-small" style="line-height:1.8em;">
 			{% for item in menu %}
 				{% if not item.bottom %}
 				<a href="{{ item.link }}" class="w3-bar-item w3-btn">{{ item.text }}</a>
 				{% endif %}
 			{% endfor %}
 		</div>
-		<div class="w3-right w3-bar-item w3-hide-medium w3-hide-large">
-			<a href="/">{% lucide "menu" %}</a>
+		<div class="w3-dropdown-hover w3-right w3-bar-item w3-hide-medium w3-hide-large">
+			<a href="#">{% lucide "menu" %}</a>
+			<div class="w3-dropdown-content w3-bar-block w3-card-4" style="right:0;">
+				{% for item in menu %}
+					{% if not item.bottom %}
+					<a href="{{ item.link }}" class="w3-bar-item w3-btn">{{ item.text }}</a>
+					{% endif %}
+				{% endfor %}
+			</div>			
 		</div>
 	</nav>	
 </header>
-<main class="w3-container"style="margin-top:64px;">
-			{{ content | safe }}
-</main>
-<footer class="w3-bottom w3-pale-lime" style="height:40px;">
-	<div>
-			{% for item in menu %}
-				{% if item.bottom %}
-				<a href="{{ item.link }}" class="w3-bar-item w3-btn">{{ item.text }}</a>
-				{% endif %}
-			{% endfor %}
+
+<main class="w3-container">
+	{{ content | safe }}
+
+	{% if panel %}
+	<div class="panel">
+		<div class="w3-center">
+			<p>
+			-hwn- Software GmbH hat ihre Tätigkeit eingestellt.<br>
+			Die Gesellschaft wurde aufgelöst und ist erloschen.
+			</p>
+		</div>
 	</div>
-	<div class="w3-right w3-hide-small">
-	</div>	
+	{% endif %}
+</main>
+
+<footer>
+	<div class="w3-bar">
+		{% for item in menu %}
+			{% if item.bottom %}
+			<a href="{{ item.link }}" class="w3-bar-item w3-btn">{{ item.text }}</a>
+			{% endif %}
+		{% endfor %}
+		<span class="w3-right w3-bar-item w3-small w3-hide-small" style="line-height:24px;letter-spacing:0.2px">
+			Generated with <a href="https://www.11ty.dev/" class="minor">Eleventy</a> and hosted at <a href="https://github.com" class="minor">GitHub</a>
+		</span>	
+	</div>
 </footer>
 
 

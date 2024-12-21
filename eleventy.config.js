@@ -15,8 +15,8 @@ module.exports = function (eleventyConfig) {
 		return parts[2] + '-' + parts[1] + '-' + parts[0];
 	});
   	eleventyConfig.addFilter("Ascii", function(value) { 
-		const originalChars = "Ññáéíóú";
-		const replacementChars = "Nnaeiou";
+		const originalChars = "äöüÄÖÜßÑñáéíóú";
+		const replacementChars = "aouAOUSNnaeiou";
 		let result = value;
 		for (let i = 0; i < originalChars.length;i++)
 			result = result.replaceAll(originalChars[i], replacementChars[i]);
@@ -46,7 +46,8 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("src/**/*.php");
 	
 	// This allows Eleventy to watch for file changes during local development.
-	eleventyConfig.addWatchTarget("src/**/*.php");
+	//~ eleventyConfig.addWatchTarget("src/**/*.php");
+	eleventyConfig.addWatchTarget("src/_library/");
 	eleventyConfig.setUseGitIgnore(false);
 
 	return {

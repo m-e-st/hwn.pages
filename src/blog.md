@@ -1,7 +1,7 @@
 ---
 layout: main.njk
 permalink: "{{ page.filePathStem }}.html"
-title: Verschiedenes
+title: -hwn- Blog
 description: Verschiedene interessante Themen
 date: 2022-10-10
 ---

@@ -1,24 +1,49 @@
 ---
 layout: main.njk
 permalink: "{{ page.filePathStem }}.html"
-title: Geschichte
+title: -hwn- Chronologie
 description: Die Geschichte der -hwn- Software GmbH
 date: 2021-03-31
+panel: yes
 ---
 
 <style>
-main dl {
-	@apply sm:grid sm:grid-cols-8 md:grid-cols-12 lg:grid-cols-16 xl:grid-cols-24;
+table {
+	font-size:16px;
 }
-main dt {
-	color:red;
-	@apply text-red-700 font-medium mr-4;
+
+.col1 {
+	color:#B91C1C;
+	font-weight:500;
+	min-width:3em;
+	vertical-align: baseline;
 }
-main dd {
-	@apply text-slate-500 sm:col-span-7 md:col-span-11 lg:col-span-15 xl:col-span-23;
+.col2 {
 }
 </style>
 
+<div class="w3-panel">
+<table>
+	<tr><td class="col1">1996</td>
+	<td class="col2">Gründung der -hwn- Software GmbH in Berlin</td></tr>
+	<tr><td class="col1">1999</td>
+	<td class="col2">Gründung der Zweigstelle Brandenburg</td></tr>
+	<tr><td class="col1">2002</td>
+	<td class="col2">Fokussierung auf Projektgeschäft</td></tr>
+	<tr><td class="col1">2006</td>
+	<td class="col2">Umzug der GmbH nach Oranienburg
+	<br>Auflösung der Geschäftsstelle Berlin</td></tr>
+	<tr><td class="col1">2012</td>
+	<td class="col2">Fokussierung auf Großkunden</td></tr>
+ 	<tr><td class="col1">2016</td>
+	<td class="col2">Einstellung der operativen Geschäftstätigkeit</td></tr>
+	<tr><td class="col1">2020</td>
+	<td class="col2">Liquidation der -hwn- Software GmbH</td></tr>
+</table>
+</div>
+
+
+{#
 <dl>
 	<dt>1996</dt>
 	<dd>Gründung der -hwn- Software GmbH in Berlin</dd>
@@ -36,3 +61,4 @@ main dd {
 	<dt>2020</dt>
 	<dd>Liquidation der -hwn- Software GmbH</dd>
 </dl>
+#}
