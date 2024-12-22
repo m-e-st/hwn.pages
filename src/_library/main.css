@@ -17,7 +17,6 @@ header, footer {
 	width:100%;
 	z-index:1;
 	background-color: var(--lime-100);
-	padding-left:1em;
 	letter-spacing:2px;
 	color:var(--stone-500)
 }
