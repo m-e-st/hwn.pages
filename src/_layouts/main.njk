@@ -23,15 +23,15 @@ menu:
 <header class="">
 	<nav class="w3-bar w3-padding">
 		<img class="w3-left" src={{site.pagelogo}}>
-		<a href="/" class="w3-bar-item w3-btn w3-large"><b>{{ site.title }}</b>
-		<div class="w3-right w3-hide-small" style="line-height:1.8em;">
+		<a href="/" class="w3-bar-item w3-btn w3-large hide-micro"><b>{{ site.caption }}</b>
+		<div class="w3-right hide-small" style="line-height:1.8em;">
 			{% for item in menu %}
 				{% if not item.bottom %}
 				<a href="{{ item.link }}" class="w3-bar-item w3-btn">{{ item.text }}</a>
 				{% endif %}
 			{% endfor %}
 		</div>
-		<div class="w3-dropdown-hover w3-right w3-bar-item w3-hide-medium w3-hide-large">
+		<div class="w3-dropdown-hover w3-right w3-bar-item hide-large hide-tiny">
 			<a href="#">{% lucide "menu" %}</a>
 			<div class="w3-dropdown-content w3-bar-block w3-card-4" style="right:0;">
 				{% for item in menu %}
@@ -64,8 +64,11 @@ menu:
 			<a href="{{ item.link }}" class="w3-bar-item w3-btn">{{ item.text }}</a>
 			{% endif %}
 		{% endfor %}
-		<span class="w3-right w3-bar-item w3-small w3-hide-small" style="line-height:24px;letter-spacing:0.2px">
-			Generated with <a href="https://www.11ty.dev/" class="minor">Eleventy</a> and hosted at <a href="https://github.com" class="minor">GitHub</a>
+
+		<span class="w3-right w3-bar-item w3-small hide-small" style="line-height:24px;letter-spacing:0.2px">
+			<span class="w3-text-dark-stone">{{ site.title }}</span> v{{ pkg.version }}
+			created with <a href="https://www.11ty.dev/" class="minor">Eleventy</a> 
+			and hosted on <a href="https://github.com" class="minor">GitHub</a>
 		</span>	
 	</div>
 </footer>

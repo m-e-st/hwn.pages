@@ -66,4 +66,9 @@ h1,h2,h3,h4,h5,h6 {
 	z-index: -1;
 }
 
+@media (min-width:561px) { .hide-large {display:none!important} }
+@media (max-width:560px) { .hide-small {display:none!important} }
+@media (max-width:240px) { .hide-tiny  {display:none!important} }
+@media (max-width:180px) { .hide-micro {display:none!important} }
+
 /* borrowed from TAILWIND */

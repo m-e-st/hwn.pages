@@ -2,8 +2,8 @@ module.exports = {
 	title: "-hwn- Pages",
 	description: "-hwn published via GitHub pages",
 	caption: "-hwn-",
-	version: "0.1.0",
-	lang: "es",
+	version: "1.0",
+	lang: "de",
 	mail: "mstumpp@hwn.de",
 
 	scriptdir: "/static",
