@@ -35,6 +35,7 @@ footer {
 main {
 	margin-left:1em;
 	margin-top: var(--headsize);
+	background-color: white;
 }
 h1,h2,h3,h4,h5,h6,p { 
 	font-family: Inter, ui-sans-serif, system-ui, sans-serif;
@@ -49,7 +50,6 @@ h1,h2,h3,h4,h5,h6 {
 .impressum {
 	font-family:Consolas,"courier new";
 	font-size:16px;
-
 	word-wrap:break-word;
 }
 
@@ -60,9 +60,10 @@ h1,h2,h3,h4,h5,h6 {
 	margin:16px;
 	padding:16px 32px;
 	position:fixed;
-	width:auto;
+	min-width:450px;
 	bottom:72px;
 	bottom:calc(var(--footsize) + 32px);
+	z-index: -1;
 }
 
 /* borrowed from TAILWIND */

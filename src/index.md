@@ -4,6 +4,7 @@ title: Home
 description: Landing Page -hwn- Software GmbH
 date: 2021-06-30
 infoTag: version
+panel: yes
 ---
 
 # -hwn- Software GmbH
