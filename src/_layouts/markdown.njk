@@ -1,5 +1,5 @@
 ---
-layout: base.njk
+layout: main.njk
 version: 2024-09-15
 ---
 
@@ -7,9 +7,11 @@ version: 2024-09-15
 .markdown {
 	margin-top:16px;
 	color:var(--stone-800)!important
+	background: red;
 }
 .markdown a {
 	color:blue;
+	--callout
 }
 .markdown a:hover {
 	font-weight: bold;
@@ -17,11 +19,10 @@ version: 2024-09-15
 
 .date {
 	float:right;
-	margin: -28px -16px 0 0;
-	padding: 8px 32px 8px;
-	letter-spacing:4px;
-	background: #ccc;
-	width2:52%
+	margin: 4px -8px;
+	color: var(--stone-200);
+	letter-spacing:2px;
+	xbackground: #ccc;
 }
 .note {
 	float:none;
@@ -32,31 +33,41 @@ version: 2024-09-15
 	width:100%
 }
 
+/* **** CSS für markdown-it-obsidian-callouts **** */
+
+.callout {
+	background: var(--lime-100);
+	margin: 16px 0;
+}
+.callout-title {
+	background: var(--lime-500);
+	color:var(--lime-50);;
+	padding:8px;
+	font-weight:900;
+}
+.callout-title-icon {
+	margin: 4px 8px;
+	float:left;
+}
+.callout-title-inner {
+	margin: 4px 8px 4px 32px;
+}
+.callout-content {
+	color:var(--stone-800);;
+	padding:0 16px 4px;
+}
 </style>
 
-<header id="header" class="w3-hide">
-	<nav class="w3-top w3-bar w3-indigo w3-padding w3-card w3-center w3-wide w3-opacity-min">
-		<a href="#lecciones" class="w3-bar-item w3-btn w3-left">Notas {{  page.fileSlug | dateTitle }}</a>
-		<a href="#lecciones" class="w3-right w3-bar-item w3-btn">Lecciones</a>
-	</nav>
-	<div class="w3-padding-32"></div>
-<!--
-	<div class="w3-container w3-panel w3-light-gray w3-padding-top-32">
-		<h6 class="w3-right">{{  page.fileSlug | dateTitle }}</h6>
-	</div>
--->
-</header>
-
-<main class="">
-	<section class="w3-container markdown">
+<markdown>
+	{% if date %}<span class="date">{{ date | Datum }}</span>{% endif %}
 	{{ content | safe }}
-	</section>
-</main>
+</markdown>
 
 <script>
 	document.addEventListener("DOMContentLoaded", function(){
 		const queryString = window.location.search;
-		if (! queryString.includes("preview") )
-			document.getElementById("header").className = "";
-		});
+		if (! queryString.includes("preview") ) {
+			//~ document.getElementById("header").className = "";  // besser über tags <header> und <footer> und display:none lösen
+		}
+	});
 </script>

@@ -1,5 +1,5 @@
 ---
-layout: main.njk
+layout: markdown.njk
 title: Home
 description: Landing Page -hwn- Software GmbH
 date: 2021-06-30

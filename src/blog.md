@@ -1,5 +1,5 @@
 ---
-layout: main.njk
+layout: markdown.njk
 permalink: "{{ page.filePathStem }}.html"
 title: -hwn- Blog
 description: Verschiedene interessante Themen

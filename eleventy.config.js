@@ -1,7 +1,10 @@
 const htmlMinifier = require ('html-minifier-terser');
 const lucideIcons = require("@grimlink/eleventy-plugin-lucide-icons");
+const markdownItCallouts = require("markdown-it-obsidian-callouts");
 
 module.exports = function (eleventyConfig) {
+	eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(markdownItCallouts));
+	
     eleventyConfig.addPlugin(lucideIcons);
   	eleventyConfig.addShortcode("anchor", function setAnchor(anchorName) { return `<a name="${anchorName}"><br><br><hr></a>`; });
   	eleventyConfig.addFilter("Datum", function(value) { 
