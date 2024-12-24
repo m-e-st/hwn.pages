@@ -1,6 +1,6 @@
-# elektrolurch/espanol
+# -hwn- Pages
 
-Anfänger Seite zum Spanisch-Lernen
+~~Anfänger Seite zum Spanisch-Lernen~~
 
 #### Entwicklung
 
@@ -13,4 +13,4 @@ Laufzeit:
 - W3.CSS v4  (herausgegeben von https://w3schools.com)
 
 Entwicklung
-- eleventy v1.0
+- eleventy v3.0
