@@ -1,6 +1,6 @@
 ---
 layout: markdown.njk
-title: Home
+title: -hwn- Home
 description: Landing Page -hwn- Software GmbH
 date: 2021-06-30
 infoTag: version

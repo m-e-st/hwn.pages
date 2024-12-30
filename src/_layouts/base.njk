@@ -36,7 +36,7 @@
 
 			<script src="static/javascripts.js" defer></script>			<!-- Alle Javascripts in include über javascripts.njk -->
 
-			{%- if enable.mermaid -%}										<!-- mermaid wird separat nach den anderen Scripten ...	-->
+			{%- if enable.mermaid -%}									<!-- mermaid wird separat nach den anderen Scripten ...	-->
 				<script src="static/lib/mermaid.min.js" defer></script>	<!-- ... eingebunden									-->
 				<script>												<!-- ... und initalisiert 								-->
 					document.addEventListener("DOMContentLoaded", function(evt)	{
