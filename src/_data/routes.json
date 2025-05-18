@@ -6,5 +6,5 @@
 	{ "route": "p*", "url": "https://box.stumpp.tk/?action=password" },
 	{ "route": "q*", "url": "https://web.stumpp.name/info/qrcode" },
 	{ "route": "s*", "url": "https://web.stumpp.name/" },
-	{ "route": "@*", "url": "/blog.html" }
+	{ "route": "@*", "url": "/routes.html" }
 ]

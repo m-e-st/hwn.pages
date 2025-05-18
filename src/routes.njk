@@ -1,0 +1,55 @@
+---
+layout: base.njk
+permalink: "{{ page.filePathStem }}.html"
+redirect:
+   delay: 300
+   url: /
+
+---
+<style>
+	body { 
+		background-color:#e6eef9; 
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position: center;
+		background-size: 67%;
+	}
+	.image {
+		position:absolute;
+		width: 67%
+		top: 5vh; left:50%;
+		transform:translate(-50%,25%);-ms-transform:translate(-50%,-25%)
+		z-index:-1;
+		opacity:0.3;
+		object-fit: scale-down;
+	}
+
+	.w3-blue,.w3-hover-blue:hover{color:#fff!important;background-color:#e6eef9!important}
+</style>
+	
+<div style="position:relative">
+	<h3 id="target" class="w3-padding w3-center" style="color:#f8fafd;background-color:#4a86d3;font-weight:700;margin:0">Routing</h3>
+	<div class="w3-image image w3-padding">
+		<img src="{{site.imagedir}}/dragon.png" alt="here are dragons">
+	</div>
+	<div class="w3-bar w3-black" style="margin-top:0">
+	{% for item in routes %}
+		{% if item.url != page.filePathStem+".html" %}
+		<a href="{{item.url}}"
+		   class="w3-bar-item w3-button w3-tooltip w3-xxlarge w3-margin-left">
+		   {{item.route}}
+		   <span class="w3-text w3-large" style="top:0;">&rArr; {{item.url}}</span>
+		</a>
+		{% endif %}
+	{% endfor %}
+	</div>
+</div>
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function(event) {
+
+});
+</script>
