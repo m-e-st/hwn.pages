@@ -1,0 +1,10 @@
+[
+	{ "route": "a*", "url": "https://aprendo-espanol.pages.dev/" },
+	{ "route": "e*", "url": "https://exchange.free.nf" },
+	{ "route": "h*", "url": "https://aprendo-espanol.pages.dev/ponencia/hogares-1.html" },
+	{ "route": "j*", "url": "https://katjas-blog.statichost.eu" },
+	{ "route": "p*", "url": "https://box.stumpp.tk/?action=password" },
+	{ "route": "q*", "url": "https://web.stumpp.name/info/qrcode" },
+	{ "route": "s*", "url": "https://web.stumpp.name/" },
+	{ "route": "@*", "url": "/blog.html" }
+]

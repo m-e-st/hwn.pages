@@ -2,9 +2,62 @@
 layout: base.njk
 permalink: "{{ page.filePathStem }}.html"
 redirect:
-   delay: 1
-   url: https://aprendo-espanol.pages.dev/ponencia/hogares-1.html
+   delay: 300
+   url: /
+
 ---
-<div class="w3-light-blue w3-center w3-margin-64">
-	<img src="/static/img/dragon.png" alt="here are dragons">
+<style>
+	body { 
+		background-color:#e6eef9; 
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position: center;
+		background-size: 67%;
+	}
+	.image {
+		position:absolute;
+		width: 67%
+		top: 5vh; left:50%;
+		transform:translate(-50%,25%);-ms-transform:translate(-50%,-25%)
+		z-index:-1;
+		opacity:0.3;
+		object-fit: scale-down;
+		
+	}
+</style>
+	
+<div style="position:relative">
+	<h3 id="target" class="w3-padding w3-center" style="color:#f8fafd;background-color:#4a86d3;font-weight:700;margin-top:0">cc</h3>
+	<div class="w3-image image w3-padding">
+		<img src="{{site.imagedir}}/dragon.png" alt="here are dragons">
+	</div>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(event) {
+	const targets = window.location.pathname.toLocaleLowerCase().split(/[\/\.]/);
+	//~ console.log(targets);
+	document.getElementById("target").textContent = targets[0];
+{% for item in routes %}
+	//~ console.log("loop "+{{loop.index}}, "{{item.route}}", "{{item.url}}");
+	if (pathMatch(targets, "{{item.route}}")) return window.location.replace("{{item.url}}");
+{% endfor %}
+	document.body.style.backgroundImage = 'url({{site.imagedir}}/404.png)';
+});
+
+function pathMatch(targets, route) {
+	for (let i = 0; i < targets.length; i++) {
+		//~ console.log("match", i, route, targets[i]);
+		if (pathCompare(targets[i], route)) return true;
+	}
+	return false;
+}
+
+function pathCompare(target, route) {
+	//~ console.log("compare",route, target, (!target),(target.endsWith("*")),route.startsWith(target.slice(0,-1)),route.localeCompare(target));
+	if ((!target) || (!route)) return false;
+	if (route.endsWith("*"))
+		 return target.startsWith(route.slice(0,-1));
+	else return target.localeCompare(route);
+}
+</script>
