@@ -1,30 +1,39 @@
 [
 	{
 		"name": "Aprendo …",	"icon": "languages",
-		"route": "a*",			"url": "https://aprendo-espanol.pages.dev/"
+		"route": "a*",			"url":  "https://aprendo-espanol.pages.dev/"
 	}, {
 		"name": "Exchange",		"icon": "arrow-right-left",
-		"route": "e*", "url":	"https://exchange.free.nf"
+		"route": "e*",			"url":  "https://exchange.free.nf"
 	}, {
-		"name": "Hogares …",  "icon": "languages",
-		"route": "h*", "url": "https://aprendo-espanol.pages.dev/ponencia/hogares-1.html" },
-	{	"name": "Japan Blog",  "icon": "user-pen",
-		"route": "j*", "url": "https://katjas-blog.statichost.eu" },
-	{	"name": "Mail Server", "icon": "mails",
-		"route": "me*", "url": "https://box.stumpp.tk/mail/" },
-	{	"name": "Matrix", "icon": "messages-square",
-		"route": "ma*", "url": "https://app.element.io/#/login" },
-	{	"name": "Passwords",  "icon": "key-round",
-		"route": "p*", "url": "https://box.stumpp.tk/?action=password" },
-	{	"name": "QR Code",    "icon": "qr-code",
-		"route": "q*", "url": "https://web.stumpp.name/info/qrcode" },
-	{	"name": "stumpp.name", "icon": "",
-		"route": "s*", "url": "https://web.stumpp.name/" },
-	{	"name": "Tobias",     "icon": "user-pen", 
-		"route": "t*", "url": "https://tobias.stumpp.name/" },
-	{	"name": "Video",      "icon": "headset", 
-		"route": "v*", "url": "https://bbb.private.coffee/rooms/aua-ctp-rad-9fn/join" },
-	{	"name": "Index",      "icon": "table-of-contents",
-		"route": "@*", "url": "/routes.html"
+		"name": "Hogares …",	"icon": "languages",
+		"route": "h*",			"url":  "https://aprendo-espanol.pages.dev/ponencia/hogares-1.html" 
+	}, {
+		"name": "Japan Blog",	"icon": "user-pen",
+		"route": "j*",			"url": "https://katjas-blog.statichost.eu" 
+	}, {
+		"name": "Mail Server",	"icon": "mails",
+		"route": "ma*",			"url":  "https://box.stumpp.tk/mail/" 
+	}, {
+		"name": "Matrix",		"icon": "messages-square",
+		"route": "m*",			"url":  "https://app.element.io/#/login" 
+	}, {
+		"name": "Passwords",	"icon": "key-round",
+		"route": "p*", 			"url":  "https://box.stumpp.tk/?action=password" 
+	}, {
+		"name": "QR Code",		"icon": "qr-code",
+		"route": "q*",			"url":  "https://web.stumpp.name/info/qrcode" 
+	}, {
+		"name": "stumpp.name",	"icon": "",
+		"route": "s*",			"url":  "https://web.stumpp.name/" 
+	}, {
+		"name": "Tobias",		"icon": "user-pen", 
+		"route": "t*",			"url":  "https://tobias.stumpp.name/" 
+	}, {
+		"name": "Video",		"icon": "headset", 
+		"route": "v*",			"url":  "https://bbb.private.coffee/rooms/aua-ctp-rad-9fn/join" 
+	}, {
+		"name": "Index",		"icon": "table-of-contents",
+		"route": "@*",			"url":  "/routes.html"
 	}
 ]
