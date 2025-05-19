@@ -7,8 +7,26 @@ redirect:
 
 ---
 <style>
+	/* derivated from w3-theme 		*/
+	/*		… l5  => #f8fafd		*/
+	/*		… l4  => #e6eef9		*/
+	/*		… l3  => #cedef3		*/
+	/*		… l2  => #b5cded		*/
+	/*		… l1  => #9cbde7		*/
+	/*		theme => #85ade1		*/
+	/*		… d1  => #6799da		*/
+	/*		… d2  => #4a86d3		*/
+	/*		… d3  => #3173c9		*/
+	/*		… d4  => #2a62ac		*/
+	/*		… d5  => #235290		*/	
+
+	.route-theme {color:#000 !important; background-color:#85ade1 !important}			/* w3-theme		*/
+	.route-headline {color:#fff !important; background-color:#4a86d3 !important}		/* w3-theme-d2	*/
+	.route-buttons {color:#000 !important; background-color:#f8fafd !important}			/* w3-theme-l5	*/
+	.route-hover:hover {color:#000 !important; background-color:#b5cded !important}		/* w3-theme-l2	*/
+
 	body { 
-		background-color:#e6eef9; 
+		background-color:#e6eef9;  // w3-theme-l4 of "#85ade1"
 		background-repeat: no-repeat;
 		background-attachment: fixed;
 		background-position: center;
@@ -23,30 +41,30 @@ redirect:
 		opacity:0.3;
 		object-fit: scale-down;
 	}
-
-	.w3-blue,.w3-hover-blue:hover{color:#fff!important;background-color:#e6eef9!important}
 </style>
-	
-<div style="position:relative">
-	<h3 id="target" class="w3-padding w3-center" style="color:#f8fafd;background-color:#4a86d3;font-weight:700;margin:0">Routing</h3>
-	<div class="w3-image image w3-padding">
+
+<div class="">
+	<h2 id="target" class="w3-padding w3-center route-headline" style="font-weight:700;margin:-0">Routing</h2>
+	<div class="w3-image image w3-padding" style="z-index:-5">
 		<img src="{{site.imagedir}}/dragon.png" alt="here are dragons">
 	</div>
-	<div class="w3-bar w3-black" style="margin-top:0">
+	<div class="w3-tansparent" style="margin-top:0px"> <!-- transperent to see the dragon -->
 	{% for item in routes %}
 		{% if item.url != page.filePathStem+".html" %}
-		<a href="{{item.url}}"
-		   class="w3-bar-item w3-button w3-tooltip w3-xxlarge w3-margin-left">
-		   {{item.route}}
-		   <span class="w3-text w3-large" style="top:0;">&rArr; {{item.url}}</span>
+		<a class="w3-mobile w3-bar-item w3-btn w3-left-align route-hover"
+		   style="min-width:24.9%;xmax-width:49.99%; "
+		   href= "{{item.url}}">
+			<span class="w3-left w3-margin-right">
+			{% if item.icon -%}{% lucide item.icon, { size:"64", class:"ms-icon" } %}{%- else %}{% lucide "square-arrow-out-up-right", { size:"64", class:"ms-icon" } %}{%- endif %}
+			</span>
+			<span class="w3-xlarge">{{item.name|d(item.route)|d("hallo")}}</span><br>
+			<span class="w3-margin-right">{{item.url|d(item.name)}}</span>
 		</a>
+		<span class="w3-bar-item"></span>
 		{% endif %}
 	{% endfor %}
 	</div>
 </div>
-
-
-
 
 <script>
 document.addEventListener("DOMContentLoaded", function(event) {
