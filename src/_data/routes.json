@@ -1,39 +1,51 @@
 [
 	{
-		"name": "Aprendo …",	"icon": "languages",
-		"route": "a*",			"url":  "https://aprendo-espanol.pages.dev/"
+		"name": "Aprendo …",		"icon": "languages",
+		"route": "a*",				"url":  "https://aprendo-espanol.pages.dev/"
 	}, {
-		"name": "Exchange",		"icon": "arrow-right-left",
-		"route": "e*",			"url":  "https://exchange.free.nf"
+		"name": "Español",			"icon": "languages",
+		"route": "es*",				"url":  "https://aprendo-espanol.netlify.app/"
 	}, {
-		"name": "Hogares …",	"icon": "languages",
-		"route": "h*",			"url":  "https://aprendo-espanol.pages.dev/ponencia/hogares-1.html" 
+		"name": "Exchange",			"icon": "arrow-right-left",
+		"route": "e*",				"url":  "https://exchange.free.nf"
 	}, {
-		"name": "Japan Blog",	"icon": "user-pen",
-		"route": "j*",			"url": "https://katjas-blog.statichost.eu" 
+		"name": "Hosting Cloud",	"icon": "cloud",
+		"route": "h*",				"url":  "https://220331oxzrwemsdg7gm.nextcloud.hosting.zone"
 	}, {
-		"name": "Mail Server",	"icon": "mails",
-		"route": "ma*",			"url":  "https://box.stumpp.tk/mail/" 
+		"name": "Japan Blog",		"icon": "user-pen",
+		"route": "j*",				"url": "https://katjas-blog.statichost.eu" 
 	}, {
-		"name": "Matrix",		"icon": "messages-square",
-		"route": "m*",			"url":  "https://app.element.io/#/login" 
+		"name": "Katjas Blog",		"icon": "user-pen",
+		"route": "k*",				"url": "https://katjas-blog.pages.dev" 
 	}, {
-		"name": "Passwords",	"icon": "key-round",
-		"route": "p*", 			"url":  "https://box.stumpp.tk/?action=password" 
+		"name": "Mail Server",		"icon": "mails",
+		"route": "ma*",				"url":  "https://box.stumpp.tk/mail/" 
 	}, {
-		"name": "QR Code",		"icon": "qr-code",
-		"route": "q*",			"url":  "https://web.stumpp.name/info/qrcode" 
+		"name": "Matrix Messenger",	"icon": "messages-square",
+		"route": "m*",				"url":  "https://app.element.io/#/login" 
 	}, {
-		"name": "stumpp.name",	"icon": "",
-		"route": "s*",			"url":  "https://web.stumpp.name/" 
+		"name": "Nextcloud",		"icon": "cloud",
+		"route": "n*",				"url":  "https://nextcloud.stumpp.name" 
 	}, {
-		"name": "Tobias",		"icon": "user-pen", 
-		"route": "t*",			"url":  "https://tobias.stumpp.name/" 
+		"name": "Ponencias",		"icon": "languages",
+		"route": "po*",				"url":  "https://aprendo-espanol.pages.dev/ponencia/" 
 	}, {
-		"name": "Video",		"icon": "headset", 
-		"route": "v*",			"url":  "https://bbb.private.coffee/rooms/aua-ctp-rad-9fn/join" 
+		"name": "Passwords",		"icon": "key-round",
+		"route": "p*", 				"url":  "https://box.stumpp.tk/?action=password" 
 	}, {
-		"name": "Index",		"icon": "table-of-contents",
-		"route": "@*",			"url":  "/routes.html"
+		"name": "QR Code",			"icon": "qr-code",
+		"route": "q*",				"url":  "https://web.stumpp.name/info/qrcode" 
+	}, {
+		"name": "stumpp.name",		"icon": "",
+		"route": "s*",				"url":  "https://web.stumpp.name/" 
+	}, {
+		"name": "Tobias",			"icon": "user-pen", 
+		"route": "t*",				"url":  "https://tobias.stumpp.name/" 
+	}, {
+		"name": "Video",			"icon": "headset", 
+		"route": "v*",				"url":  "https://bbb.private.coffee/rooms/aua-ctp-rad-9fn/join" 
+	}, {
+		"name": "Index",			"icon": "table-of-contents",
+		"route": "@*",				"url":  "/routes.html"
 	}
 ]
