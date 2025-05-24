@@ -21,8 +21,11 @@
 		"name": "Mail Server",		"icon": "mails",
 		"route": "ma*",				"url":  "https://box.stumpp.tk/mail/" 
 	}, {
-		"name": "Matrix Messenger",	"icon": "messages-square",
-		"route": "m*",				"url":  "https://app.element.io/#/login" 
+		"name": "Mail Server",		"icon": "mails",
+		"route": "mi*",				"url":  "https://box.stumpp.tk/mail/" 
+	}, {
+		"name": "Michael Stumpp",	"icon": "user-pen", 
+		"route": "m*",				"url":  "https://michael.stumpp.name" 
 	}, {
 		"name": "Nextcloud",		"icon": "cloud",
 		"route": "n*",				"url":  "https://nextcloud.stumpp.name" 
@@ -36,10 +39,13 @@
 		"name": "QR Code",			"icon": "qr-code",
 		"route": "q*",				"url":  "https://web.stumpp.name/info/qrcode" 
 	}, {
+		"name": "Sprachcafé",		"icon": "coffee",
+		"route": "sp*",				"url":  "https://sprachcafe.pages.dev/" 
+	}, {
 		"name": "stumpp.name",		"icon": "",
 		"route": "s*",				"url":  "https://web.stumpp.name/" 
 	}, {
-		"name": "Tobias",			"icon": "user-pen", 
+		"name": "Tobias Stumpp",	"icon": "user-pen", 
 		"route": "t*",				"url":  "https://tobias.stumpp.name/" 
 	}, {
 		"name": "Video",			"icon": "headset", 

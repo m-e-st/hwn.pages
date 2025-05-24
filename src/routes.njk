@@ -52,7 +52,7 @@ redirect:
 	{% for item in routes %}
 		{% if item.url != page.filePathStem+".html" %}
 		<a class="w3-mobile w3-bar-item w3-btn w3-left-align route-hover"
-		   style="min-width:24.9%;xmax-width:49.99%; "
+		   style="width:24.9%;min-width:320px; "
 		   href= "{{item.url}}">
 			<span class="w3-left w3-margin-right">
 			{% if item.icon -%}{% lucide item.icon, { size:"64", class:"ms-icon" } %}{%- else %}{% lucide "square-arrow-out-up-right", { size:"64", class:"ms-icon" } %}{%- endif %}
