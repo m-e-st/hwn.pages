@@ -10,6 +10,7 @@ module.exports = {
 	imagedir: "/static/img",
 	pagelogo: "/static/favicon.png",
 	pagelogotype: "png",
+	shortcuts: "/@.html",
 
 	author: {
 		name: "Michael Stumpp",

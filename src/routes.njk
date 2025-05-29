@@ -1,6 +1,7 @@
 ---
 layout: base.njk
-permalink: "{{ page.filePathStem }}.html"
+permalink: "/@.html"
+# permalink: "{{ page.filePathStem }}.html"
 redirect:
    delay: 300
    url: /
@@ -50,7 +51,7 @@ redirect:
 	</div>
 	<div class="w3-tansparent" style="margin-top:0px"> <!-- transperent to see the dragon -->
 	{% for item in routes %}
-		{% if item.url != page.filePathStem+".html" %}
+		{% if item.url != site.shortcuts %}
 		<a class="w3-mobile w3-bar-item w3-btn w3-left-align route-hover"
 		   style="width:24.9%;min-width:320px; "
 		   href= "{{item.url}}">

@@ -1,0 +1,89 @@
+# Routing shorcurs
+# 28.95.2025
+#
+  - name: Aprendo …
+    icon: languages
+    route: a*
+    url: 'https://aprendo-espanol.pages.dev/'
+  - name: Colors
+    icon: palette
+    route: color*
+    url: 'https://coolors.co/'
+  - name: Español
+    icon: languages
+    route: es*
+    url: 'https://aprendo-espanol.netlify.app/'
+  - name: Exchange
+    icon: arrow-right-left
+    route: e*
+    url: 'https://exchange.free.nf'
+  - name: Hosting Cloud
+    icon: cloud
+    route: h*
+    url: 'https://220331oxzrwemsdg7gm.nextcloud.hosting.zone'
+  - name: JSON Lint
+    icon: pocket-knife
+    route: json
+    url: 'https://jsonlint.com/'
+ #   url: 'https://katjas-blog.statichost.eu'
+  - name: Japan Blog
+    icon: user-pen
+    route: j*
+    url: 'https://katjas-blog.statichost.eu'
+  - name: Katjas Blog
+    icon: user-pen
+    route: k*
+    url: 'https://katjas-blog.pages.dev'
+  - name: Mail Server
+    icon: mails
+    route: ma*
+    url: 'https://box.stumpp.tk/mail/'
+  - name: Michael Stumpp
+    icon: user-pen
+    route: mi*
+    url: 'https://blog.stumpp.name'
+  - name: Mail Server
+    icon: mails
+    route: m*
+    url: 'https://box.stumpp.tk/mail/'
+  - name: Nextcloud
+    icon: cloud
+    route: n*
+    url: 'https://nextcloud.stumpp.name'
+  - name: Ponencias
+    icon: languages
+    route: po*
+    url: 'https://aprendo-espanol.pages.dev/ponencia/'
+  - name: Passwords
+    icon: key-round
+    route: p*
+    url: 'https://box.stumpp.tk/?action=password'
+  - name: QR Code
+    icon: qr-code
+    route: q*
+    url: 'https://web.stumpp.name/info/qrcode'
+  - name: Sprachcafé
+    icon: coffee
+    route: sp*
+    url: 'https://sprachcafe.pages.dev/'
+  - name: stumpp.name
+    icon: ''
+    route: s*
+    url: 'https://web.stumpp.name/'
+  - name: Tobias Stumpp
+    icon: user-pen
+    route: t*
+    url: 'https://tobias.stumpp.name/'
+  - name: Video
+    icon: headset
+    route: v*
+    url: 'https://bbb.private.coffee/rooms/aua-ctp-rad-9fn/join'
+  - name: YAML Tools
+    icon: pocket-knife
+    route: yaml
+    url: 'https://onlineyamltools.com/'
+  - name: Index
+    icon: table-of-contents
+    route: '@*'
+    url: '/@.html'
+#    url: /routes.html
