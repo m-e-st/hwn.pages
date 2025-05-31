@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 {% for item in routes %}
 	//~ console.log("loop "+{{loop.index}}, "{{item.route}}", "{{item.url}}");
 	if (pathMatch(targets, "{{item.route}}")) return window.location.replace("{{item.url}}");
+	//~ if (pathMatch(targets, "{{item.route}}")) return ; // window.location.replace("{{item.url}}");
 {% endfor %}
 	document.body.style.backgroundImage = 'url({{site.imagedir}}/404.png)';
 });
@@ -53,10 +54,11 @@ function pathMatch(targets, route) {
 }
 
 function pathCompare(target, route) {
+	if (!target) return false;
 	//~ console.log("compare",route, target, (!target),(target.endsWith("*")),route.startsWith(target.slice(0,-1)),route.localeCompare(target));
 	if ((!target) || (!route)) return false;
 	if (route.endsWith("*"))
 		 return target.startsWith(route.slice(0,-1));
-	else return target.localeCompare(route);
+	else return (target.localeCompare(route) == 0);		// localCompare returns 0 on equality
 }
 </script>
